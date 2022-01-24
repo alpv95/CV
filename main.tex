@@ -1,0 +1,747 @@
+% based off of Andrew McNabb's resume
+\documentclass[11 pt,oneside]{article}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[encapsulated]{CJK}
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage{scalerel}
+\usepackage{tikz}
+\usetikzlibrary{svg.path}
+\usepackage{multicol}
+\usepackage{amssymb}
+
+
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+\definecolor{linkedincol}{HTML}{0e76a8}
+\tikzset{
+  orcidlogo/.pic={
+    \fill[orcidlogocol] svg{M256,128c0,70.7-57.3,128-128,128C57.3,256,0,198.7,0,128C0,57.3,57.3,0,128,0C198.7,0,256,57.3,256,128z};
+    \fill[white] svg{M86.3,186.2H70.9V79.1h15.4v48.4V186.2z}
+                 svg{M108.9,79.1h41.6c39.6,0,57,28.3,57,53.6c0,27.5-21.5,53.6-56.8,53.6h-41.8V79.1z M124.3,172.4h24.5c34.9,0,42.9-26.5,42.9-39.7c0-21.5-13.7-39.7-43.7-39.7h-23.7V172.4z}
+                 svg{M88.7,56.8c0,5.5-4.5,10.1-10.1,10.1c-5.6,0-10.1-4.6-10.1-10.1c0-5.6,4.5-10.1,10.1-10.1C84.2,46.7,88.7,51.3,88.7,56.8z};
+  }
+}
+
+\newcommand\orcidicon[1]{\href{https://orcid.org/#1}{\mbox{\scalerel*{
+\begin{tikzpicture}[yscale=-1,transform shape]
+\pic{orcidlogo};
+\end{tikzpicture}
+}{|}}}}
+
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+\definecolor{Mycolor2}{HTML}{820000}
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+% 820000
+% EFA91D
+% EF7C7C
+%002147
+\renewcommand\labelitemii{\textcolor{Mycolor2}{$\circ$}}
+\renewcommand\labelitemiii{\textcolor{Mycolor2}{$\circ$}}
+\renewcommand\labelitemi{\textcolor{Mycolor2}{$\circ$}}
+
+
+\pagestyle{empty}
+\geometry{letterpaper,tmargin=0.6in,bmargin=0.8in,lmargin=0.4in,rmargin=0.4in,headheight=0in,headsep=0in,footskip=.3in}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands and environments
+
+% This defines how the name looks
+\newcommand{\bigname}[1]{
+	%\fontfamily{phv}
+	%\begin{center}\scshape\Huge#1\end{center}
+    {\hspace{50pt}\scshape\Huge#1}
+}
+
+% A ressection is a main section (<H1>Section</H1>)
+\newenvironment{ressection}[1]{
+	\vspace{4pt}
+	%\fontfamily{phv}
+	{\selectfont\Large\color{Mycolor2}{\textbf{#1}}}
+	\vspace{-6.5pt} \\
+	\textcolor{Mycolor2}{\rule{\textwidth}{0.7pt}}
+	\begin{itemize}
+	\vspace{3pt}
+}{
+	\end{itemize}
+}
+
+% A resitem is a simple list element in a ressection (first level)
+\newcommand{\resitem}[1]{
+	\vspace{-4pt}
+	\item[] \begin{flushleft} #1 \end{flushleft}
+    %\item[]  {#1} 
+}
+
+% A ressubitem is a simple list element in anything but a ressection (second level)
+\newcommand{\ressubitem}{
+	\vspace{-4pt}
+	%\item \begin{flushleft} #1 \end{flushleft}
+	\item
+}
+
+% A resbigitem is a complex list element for stuff like jobs and education:
+%  Arg 1: Name of company or university
+%  Arg 2: Location
+%  Arg 3: Title and/or date range
+\newcommand{\resbigitem}[3]{
+	\vspace{-5pt}
+	\item[]
+	\textbf{#1} --- #2 %\\
+	\hfill
+	\textit{#3}
+}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsec}[3]{
+	\resbigitem{#1}{#2}{#3}
+	\vspace{-2pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsecP}[3]{
+	\resbigitem{#1}{#2}{#3}
+	\vspace{-2pt}
+
+}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsecPu}[1]{
+	\resitem{#1}
+	\vspace{2pt}
+
+}
+
+
+
+% This is a simple sublist
+\newenvironment{reslist}[1]{
+	\resitem{\textbf{#1}}
+	\vspace{-5pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Now for the actual document:
+
+\begin{document}
+\newcommand{\zhs}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
+
+\fontfamily{ppl} \selectfont
+
+% Name with horizontal rule
+\centerline{\huge{\textbf{\textcolor{Mycolor2}{Abel Lawrence Peirson}}}}
+\vspace{5pt}
+\centerline{Kavli Institute for Particle Astrophysics and Cosmology, Stanford CA 94305}
+
+\small{
+\vspace{5pt} %\rule{\textwidth}{1pt}
+\centerline{\faEnvelopeO \hspace{1pt} \href{mailto:alpv95@stanford.edu}{alpv95@stanford.edu} \hspace{5pt} \textcolor{linkedincol}{\faLinkedinSquare} \hspace{1pt} \href{https://www.linkedin.com/in/abel-lawrence-peirson-v-b96aba94/}{abel-lawrence-peirson-v}} \\
+\centerline{\faGlobe \hspace{1pt} \url{www.alpeirson.com} \hspace{5pt} \faGithub \hspace{1pt} \url{www.github.com/alpv95}}
+\vspace{1.5pt}
+\centerline{\orcidicon{0000-0000-0000-0000}\hspace{1pt} \href{https://orcid.org/0000-0001-6292-1911}{orcid.org/0000-0001-6292-1911}}
+}
+
+% \rule{\textwidth}{1pt}
+\vspace{10 pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{\textbf{Education}}
+\vspace{2pt}
+\begin{ressubsec}{\normalsize{Stanford University}}{\emph{Ph.D in Physics}}{2017 - Sep 2023}
+		Thesis: High Energy Polarization Statistics and Geometry. \\ GPA: 4.0 (in required coursework).
+	\end{ressubsec}
+    
+	\begin{ressubsec}{\normalsize{University of Oxford}}{\emph{MPhys in Physics}}{2017}
+		First Class Honours with Distinction -- top 10\% of graduating class. \\
+		College: Christ Church %4.0 GPA equivalent
+		%\ressubitem{Research Area: Turbulent transport theory in fusion and astrophysical plasmas.}
+	\end{ressubsec}
+
+% 	\vspace{2pt}
+	
+% 	\begin{ressubsec}{Kingston Grammar School}{Kingston, UK}{2008 - 2013}
+% 		\ressubitem{A Levels: Physics (A*) Mathematics (A*) Further Mathematics (A*) Latin (A) Extended Project (A)} %- Valedictorian}
+		
+% 	\vspace{1pt}
+		
+% 	\end{ressubsec}
+
+\end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{ressection}{\textbf{Fellowships, Honors \& Awards}}
+    \vspace{2pt}
+    \begin{ressubsecP}{Stanford Data Science Scholar (\$100k+)}{Stanford, USA}{2021}
+	%\ressubitem{Awarded to the most outstanding member of Christ Church.}
+	\end{ressubsecP}
+% 	\vspace{3pt}
+% 	\begin{ressubsecP}{Wonderfest Science Envoy}{Stanford, USA}{Jun 2019}
+% 	%\ressubitem{Awarded to the most outstanding member of Christ Church.}
+% 	\end{ressubsecP}
+    \vspace{3pt}
+    \begin{ressubsecP}{Future Investigator in NASA Earth and Space Science and Technology (\$160k+)}{Stanford, USA}{2019}
+	%\ressubitem{Awarded to the most outstanding member of Christ Church.}
+	\end{ressubsecP}
+% 	\vspace{3pt}
+% 	\begin{ressubsecP}{Wonderfest Science Envoy}{Stanford, USA}{Jun 2019}
+% 	%\ressubitem{Awarded to the most outstanding member of Christ Church.}
+% 	\end{ressubsecP}
+    \vspace{3pt}
+    \begin{ressubsecP}{Roach Prize for the most outstanding undergraduate across the sciences}{Oxford, UK}{2017}
+	%\ressubitem{Awarded to the most outstanding undergraduate across the sciences.}
+	\end{ressubsecP}
+    \vspace{3pt}
+	\begin{ressubsecP}{Hooke Prize for the most outstanding member of Christ Church in the sciences}{Oxford, UK}{2017}
+	%\ressubitem{Awarded to the most outstanding member of Christ Church.}
+	\end{ressubsecP}
+    \vspace{3pt}
+	\begin{ressubsecP}{Oxford International Strategy Scholarship}{Oxford, UK}{2016}
+	%\ressubitem{Awarded full funding for Accelerator Physics research at the CLIC Test Facility in CERN and the CERN Summer Student Programme.}
+	\end{ressubsecP}
+% 	\vspace{3pt}
+% 	\begin{ressubsecP}{Christ Church Travel Award}{Oxford, UK}{2016, 2015}
+% 	%\ressubitem{Awarded grant to fund travel and living expenses for the USTC Physics Summer School and subsequently the CERN Summer Student Programme. }
+% 	\end{ressubsecP}
+	\vspace{3pt}
+	\begin{ressubsecP}{Christ Church Academic Scholarship}{Oxford, UK}{2014-2017}
+	%\ressubitem{Scholarship awarded yearly for outstanding performance in university examinations - achieving distinction. }
+	\end{ressubsecP}
+% 	\vspace{3pt}
+% 	\begin{ressubsecP}{Christ Church Collections Prize}{Oxford, UK}{2015,2014,2013}
+	%\ressubitem{Prize awarded termly for best performance in college examinations (received prize every term since beginning of degree).}
+% 	\end{ressubsecP}
+	\vspace{3pt}
+	\begin{ressubsecP}{Gold, British Physics Olympiad}{London, UK}{2013}
+	%\ressubitem{Prize signifying a top 50 in the country place finish in the British Physics Olympiad.}
+	\end{ressubsecP}
+	\vspace{3pt}
+% 	\begin{ressubsecP}{Kingston Grammar School Academic Scholarship}{Kingston, UK}{2008-2013}
+% 	%\ressubitem{Awarded on the basis of exceptional academic merit, funded school tuition fees.}
+% 	\end{ressubsecP}
+% 	\vspace{3pt}
+%     \begin{ressubsecP}{KGS Governors' Prize}{Kingston, UK}{Jun 2013}
+% 	%\ressubitem{Awarded for the greatest all-round contribution to the school.}
+% 	\end{ressubsecP}
+%     \vspace{3pt}
+% 	\begin{ressubsecP}{KGS J.A.Strover Prize}{Kingston, UK}{Jun 2013}
+% 	%\ressubitem{Awarded to the student attaining the highest achievement in the field of Mathematics in the school, as judged by the school staff.}
+% 	\end{ressubsecP}
+%     \vspace{3pt}
+%     \begin{ressubsecP}{KGS Val Packer Prize}{Kingston, UK}{Jun 2013}
+% 	%\ressubitem{Awarded to the student attaining the highest achievement in the field of Physics in the school, as judged by the school staff.}
+% 	\end{ressubsecP}
+%     \vspace{3pt}
+% 	\begin{ressubsecP}{KGS Best Extended Project Prize}{Kingston, UK}{Sep 2012}
+% 	%\ressubitem{Awarded for the best Extended Project in the school (constructing and operating a functional Armillary Sphere).}
+% 	\end{ressubsecP}
+	
+
+\end{ressection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{-0pt}
+
+\begin{ressection}{\textbf{Research}}
+
+	\vspace{2pt}
+	\begin{ressubsec}{Kavli Institute for Particle Astrophysics and Cosmology}{Stanford University, CA}{July 2018 - Present \\ with \textbf{Prof. Roger Romani}}
+	            \ressubitem{Set current state of the art in X-ray polarization recovery using Bayesian deep learning and computer vision.}
+	           \ressubitem{Improved NASA IXPE polarization sensitivity by $>30\%$ (Code adopted as official data analysis pipeline).}
+	             \ressubitem{Created fast quadratic program + nested sampling approach to fit gravitational microlenses.}
+                 \ressubitem{Designed testable (and fittable) emission models to explain observed polarization in relativistic plasma jets.}
+                %  \ressubitem{Member of the IXPE collaboration: theory, simulation and AGN teams.}
+	\end{ressubsec}
+
+	\vspace{2pt}
+	\begin{ressubsec}{Wu Tsai Neurosciences Institute}{Stanford University, CA}{Mar 2018 - Jun 2018 \\ with \textbf{Prof. Shaul Druckmann}}
+                 \ressubitem{Developed biologically inspired recurrent neural network to reproduce path integration in the drosophilia fly brain.} 
+                %  Developing a ring attractor dynamical system neural network to reproduce 2D path integration and pointing vector persistence in the drosophilia fly brain.} \ressubitem{Results understood using topological data analysis.}
+	\end{ressubsec}
+
+	\vspace{2pt}
+	\begin{ressubsec}{NeuroAI Lab}{Stanford University, CA}{Dec 2017 - Mar 2018 \\ with \textbf{Prof. Dan Yamins}}
+                 \ressubitem{Found transfer-learning certain affine transformations of images does not improve accuracies in object classification, using RotNet and ImageNet datasets.}
+                 
+                %  Investigating unsupervised visual learning models, namely whether learning affine transformations can be transferred to improved accuracies in object classification, using RotNet and ImageNet datasets.}
+	\end{ressubsec}
+	
+	\vspace{2pt}
+	\begin{ressubsec}{Department of Physics}{University of Oxford, UK}{Sep 2016 - May 2017 \\ with \textbf{Prof. Garret Cotter}}
+                 \ressubitem{Modelled blazar spectra and investigated how they change travelling across different intergalactic media.} 
+                 \ressubitem{Placed limits on whether the Cherenkov Telescope Array will constrain the existence of axion-like particles.}
+	\end{ressubsec}
+	
+	\vspace{2pt}
+		
+	\begin{ressubsec}{CLIC Test Facility}{CERN, Switzerland}{June - Aug 2016 \\ with \textbf{Prof. Philip Burrows}}
+                 \ressubitem{Used beam dispersion to improve CTF3's Quadrupole scan and reduce uncertainty in the beam energy spread.}
+                %  which measures the emittance and Twiss parameters, 
+                %  \ressubitem{Reduced the uncertainty in the beam energy spread.} 
+                 \ressubitem{Designed and implemented new fitting program to enhance beam analysis pipeline.} 
+                %  Quantified first order chromatic aberration effects. Results were used to sharpen beam injection.}
+	\end{ressubsec}
+	
+	\vspace{2pt}
+	
+	\begin{ressubsec}{Plasma and Fusion Laboratory}{University of Science and Technology of China, Hefei}{June - Aug 2015\\ with \textbf{Prof. Xuan Sun}}
+                %  \ressubitem{Investigated Alfven wave phenomena in low temperature plasmas under a bias voltage, confirming their Doppler shift and amplification.}
+                \ressubitem{Improved plasma confinement in the KMAX axisymmetric tandem mirror machine by applying a bias voltage.}
+                %  Constructed and inserted a Langmuir probe.}
+	\end{ressubsec}
+	
+% 	\vspace{-1pt}
+	
+% 	\begin{ressubsec}{WHOI, Geology and Geophysics Laboratory}{Woods Hole, MA}{Jun - Aug 2011 \\ Research and Engineering Assistant (Geophysics), \textbf{Jim Broda}}
+% 	\end{ressubsec}
+	
+% 	\vspace{-1pt}
+
+\end{ressection}
+
+
+
+
+
+\begin{ressection}{\textbf{Selected Experience \& Outreach}}
+    \begin{ressubsec}{G-Research}{London, UK}{June - Sep 2021  \\ Quantitative Researcher}
+                \ressubitem{Quantitative research intern working on forecasting capital markets.}
+    \end{ressubsec}
+    \vspace{2pt}
+    \begin{ressubsec}{Peirson \& Freedman}{Stanford, CA}{Aug 2018 - Present  \\ Co-founder}
+                \ressubitem{Conceived and designed iOS app \textbf{\emph{\href{https://danklearning.com/}{Dank Learning}}} that uses neural networks to generate memes.}
+    \end{ressubsec}
+    \vspace{2pt}
+    \begin{ressubsec}{Wonderfest}{Bay Area, CA}{June 2019 - June 2020  \\ Science Envoy}
+                \ressubitem{Selected as one of 10 graduate students from Stanford and Berkeley.}
+                \ressubitem{Communicated science to public audiences as part of the Bay Area-wide Wonderfest program}
+	\end{ressubsec}
+% 	\vspace{2pt}
+% 	\begin{ressubsec}{Stanford Judo Club}{Stanford, CA}{June 2019 - June 2020  \\ President}
+%                 \ressubitem{Led the club as captain in competitions.}
+%                 \ressubitem{Set the annual budget and ran all financial matters for both the adults' and children's club.}
+% 	\end{ressubsec}
+	\vspace{2pt}
+	\begin{ressubsec}{Stanford Diversity and First Generation Office}{Stanford, CA}{Oct 2018 - Oct 2020  \\ First Generation and Low Income Student Mentor}
+                \ressubitem{Mentoring undergraduates from underprivileged backgrounds in all matters of student life.}
+	\end{ressubsec}
+\end{ressection}
+
+\begin{ressection}{\textbf{Selected Invited Talks}}
+    \begin{ressubsecPu}{\textbf{\emph{Tests of gravitational milli-lensing in the blazar PKS 1413+135}}, \emph{Max Planck Institute for Radio Astronomy}, 2022}
+	\end{ressubsecPu}
+	
+    \begin{ressubsecPu}{\textbf{\emph{Optimal Signal Extraction for IXPE and an Application to Blazars}}, \emph{Naval Research Laboratory Colloquium}, 2021}
+	\end{ressubsecPu}
+
+    \begin{ressubsecPu}{\textbf{\emph{Towards Optimal Signal Extraction for IXPE}}, \emph{Third Science Collaboration Meeting (SCM03)}, 2021}
+	\end{ressubsecPu}
+
+    \begin{ressubsecPu}{\textbf{\emph{The Polarization Behavior of Synchrotron Self-Compton Emission in Blazars}}, \emph{Understanding the Multiwavelength Blazar Variability - Workshop, Stanford}, 2019}
+	\end{ressubsecPu}
+	
+	\begin{ressubsecPu}{\textbf{\emph{AI in Design}}, \textbf{Used Future: Symposium by Current Obsession}, Pratt Institute NY, 2018}
+	\end{ressubsecPu}
+	
+	\begin{ressubsecPu}{\textbf{ \href{https://blogs.nvidia.com/ai-podcast/}{\emph{Episode 68}, \textbf{The NVIDIA AI Podcast}}}, 2018}
+	\end{ressubsecPu}
+
+\end{ressection}
+
+
+
+
+
+\vspace{-4pt}
+
+% \begin{ressection}{\textbf{Contributed Talks \& Posters}}
+%     \begin{ressubsecPu}{\textbf{\emph{A Deep Ensemble Approach to X-ray Polarimetry}}, \emph{Workshop at NeurIPS: Machine Learning and the Physical Sciences}, 2020 (submitted)}
+% 	\end{ressubsecPu}
+
+%     \begin{ressubsecPu}{\textbf{\emph{A Geometric Model for Blazar Rotations}}, \emph{European Astronomical Society Annual Meeting}, 2020 (Talk)}
+% 	\end{ressubsecPu}
+
+%     \begin{ressubsecPu}{\textbf{\emph{The Polarization Behavior of
+%     Relativistic Synchrotron Self-Compton Jets}}, \emph{235th Meeting of the American Astronomical Society}, 2020 (Poster)}
+% 	\end{ressubsecPu}
+
+%     \begin{ressubsecPu}{ \textbf{\emph{The Polarization Behaviour Of Blazars}}, \emph{AAS High Energy Astrophysics Division Conference}, 2019 (Poster)}
+% 	\end{ressubsecPu}
+
+%     \begin{ressubsecPu}{\textbf{ \emph{Limiting Beam Energy Spread using Dispersion Measurements in CTF3}}, \emph{CERN}, 2016 (Talk)}
+% 	\end{ressubsecPu}
+
+% 	\begin{ressubsecPu}{\textbf{\emph{Plasma Confinement in the KMAX axisymmetric tandem mirror machine}}, \emph{Hefei International Physics School}, 2015 (Talk)}
+% 	\end{ressubsecPu}
+
+% \end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{-0pt}
+
+\vspace{-0pt}
+
+%  \begin{ressection}{\textbf{Telescope Allocations}}
+%  \vspace{2pt}
+%  	\begin{ressubsecP}{Swift}{\textnormal{\emph{Monitoring IXPE blazar targets with Swift}, 240ks (Co-I, submitted)}}{2021}
+%  	\end{ressubsecP}
+%  	\vspace{4pt}
+% 	\begin{ressubsecP}{XMM-Newton }{\textnormal{\emph{Exploring the Synchro-Compton transition in CGRaBS J0211+1051}, 57ks (Co-I)}}{2019 - 2020}
+%  	\end{ressubsecP}
+		
+% \end{ressection}
+
+% \vspace{-1pt}
+
+
+% \begin{ressection}{Research Interests}
+
+% 	\vspace{-1pt}
+	
+% 	\ressubitem{Physics interests include theoretical astrophysics, accelerator physics, plasma \& fusion physics, experimental HEP, astroparticle physics, and astrophysical flows.}
+		
+% 	\vspace{-3pt}
+	
+% \end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{ressection}{\textbf{Teaching}}
+
+%     \begin{ressubsecP}{Physics 100: Observational Astrophysics}{Stanford, CA}{Spring 2019}
+% 	\end{ressubsecP}
+                
+% \end{ressection}
+%%%%%%%%%%%%
+
+ \begin{ressection}{\textbf{Telescope \& Computing Allocations}}
+ \vspace{2pt}
+    \begin{ressubsecP}{ALMA}{\textnormal{\emph{High-frequecy radio observations of IXPE targets}, 7-14 day (Co-I)}}{2021}
+ 	\end{ressubsecP}
+ 	\vspace{4pt}
+     \begin{ressubsecP}{Nordic Optical Telescope}{\textnormal{\emph{Multi-band polarization observations of IXPE targets}, 87ks (Co-I)}}{2021}
+ 	\end{ressubsecP}
+ 	\vspace{4pt}
+    \begin{ressubsecP}{NuStar}{\textnormal{\emph{Multi-Energy X-ray observations of IXPE blazar targets}, 140ks (Co-I)}}{2021}
+ 	\end{ressubsecP}
+ 	\vspace{4pt}
+ 	\begin{ressubsecP}{Swift}{\textnormal{\emph{Monitoring IXPE blazar targets with Swift}, 240ks (Co-I)}}{2020}
+ 	\end{ressubsecP}
+ 	\vspace{4pt}
+ 	\begin{ressubsecP}{Google Cloud Platform}{\textnormal{\emph{Parametric Density Estimation with Uncertainty using Deep Ensembles}, \$1000}}{2020}
+ 	\end{ressubsecP}
+ 	\vspace{4pt}
+	\begin{ressubsecP}{XMM-Newton }{\textnormal{\emph{Exploring the Synchro-Compton transition in CGRaBS J0211+1051}, 57ks (Co-I)}}{2019}
+ 	\end{ressubsecP}
+		
+\end{ressection}
+
+\begin{ressection}{\textbf{Open Source Software} ($\bigstar$494+)}
+
+%  		\resitem{\textbf{Languages:} Spanish (native) --- English (native).}
+		\resitem{\textbf{MulensModel:}  Python package for modelling gravitational microlensing events. [\href{https://github.com/rpoleski/MulensModel}{Code}][\href{https://arxiv.org/abs/2201.01110}{Paper}][\href{https://rpoleski.github.io/MulensModel/}{Webpage}]}
+		
+        \vspace{2pt}
+		\resitem{\textbf{SSCpol:}  Polarized relativistic jet simulation in C with Python wrapper. [\href{https://github.com/alpv95/SSCpol}{Code}][\href{https://ui.adsabs.harvard.edu/abs/2019ApJ...885...76P/abstract}{Paper}]}
+		
+		\vspace{2pt}
+		\resitem{\textbf{Dank Learning:} 'Show and Tell' image captioning for meme generation in Tensorflow. [\href{https://github.com/alpv95/MemeProject}{Code}][\href{https://arxiv.org/abs/1806.04510}{Paper}][\href{https://danklearning.com/}{Webpage}]}
+		\vspace{4pt}
+		\resitem{\textbf{\emph{\textcolor{Mycolor2}{Software skills:}} Python --- C/C++ --- PyTorch --- Tensorflow}} %add pytorch tensorflow keras etc.
+		
+% 		\vspace{1pt}
+		
+% 		\resitem{\textbf{Software (basic):} R --- Julia --- MPI --- Mathematica --- Swift.}
+		
+% 		\vspace{1pt}
+
+% 		\ressubitem{Substantial tutoring experience (100+ hours) teaching Physics and Mathematics at high school level.}
+		
+% 		\vspace{-1pt}
+
+% 		\resitem{Ham Radio Technician License.}
+                
+\end{ressection}
+
+\begin{ressection}{\textbf{Graduate Coursework}}
+\vspace{-8pt}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item \textbf{\textit{APPHYS293}} (Theoretical Neuroscience)
+        \item \textbf{\textit{CS379C}} (Computational Models of the Neocortex)
+        \item \textbf{\textit{CS238}} (Decision Making Under Uncertainty)
+        \item \textbf{\textit{STATS207}} (Time Series)
+        \item \textbf{\textit{CS224N}} (Natural Language Processing)
+        \item \textbf{\textit{CS230}} (Deep Learning)
+        \item \textbf{\textit{CME212}} (Advanced Software Development)
+        \item \textbf{\textit{EE364a \& b}} (Convex Optimization I \& II)
+        \item
+        \textbf{\textit{PHYS266}} (Statistical Methods in Physics)
+        \item
+        \textbf{\textit{AA 214}} (Numerical Methods for Compressible Flows)
+        \item \textbf{\textit{CS361}} (Engineering Design Optimization)
+        \item \textbf{\textit{EE263}} (Linear Dynamical Systems)
+    \end{itemize}
+    \end{multicols}
+
+\end{ressection}
+
+\newpage
+\begin{ressection}{\textbf{Teaching}}
+ \vspace{2pt}
+    \begin{ressubsecP}{Stanford PHYS113}{\textnormal{\emph{Computational Physics} (Lecturer and Teaching Assistant)}}{Winter 2021}
+ 	\end{ressubsecP}
+ 	\vspace{4pt}
+ 	\begin{ressubsecP}{Stanford PHYS100}{\textnormal{\emph{Introduction to Observational Astrophysics} (Teaching Assistant)}}{Spring 2019}
+ 	\end{ressubsecP}
+\end{ressection}
+
+\begin{ressection}{\textbf{Peer-Reviewed Publications}}
+
+\begin{ressubsecPu}{\textbf{[9]\emph{ A Deep Ensemble Approach to X-ray Polarimetry}}\\ \textbf{A.L.Peirson}, R.W.Romani \href{https://arxiv.org/abs/2111.03047}{\emph{Neurips ML4PS workshop}}, 2021}
+\end{ressubsecPu}
+
+\vspace{2pt}
+
+\begin{ressubsecPu}{\textbf{[8]\emph{ New Tests of Millilensing in the Blazar PKS 1413+135}}\\ \textbf{A.L.Peirson}, I.Liodakis, A.C.S.Readhead et al. \href{https://arxiv.org/abs/2201.01110}{\emph{ApJ}}, 2021 (Accepted)}
+\end{ressubsecPu}
+
+\vspace{2pt}
+
+
+\begin{ressubsecPu}{\textbf{[7]\emph{ Towards Optimal Signal Extraction for Imaging X-ray Polarimetry}}\\ \textbf{A.L.Peirson}, R.W.Romani. \href{https://iopscience.iop.org/article/10.3847/1538-4357/ac157d/pdf}{\emph{ApJ}, 920, 40}, 2021}
+	\end{ressubsecPu}
+
+\vspace{2pt}
+
+
+\begin{ressubsecPu}{\textbf{[6]\emph{ The Relativistic Jet Orientation and Host Galaxy of the Peculiar Blazar PKS 1413+135}}\\ A.C.S.Readhead et al. \href{http://arxiv.org/abs/2012.04045}{\emph{ApJ}, 907, 61}, 2020}
+\end{ressubsecPu}
+
+\vspace{2pt}
+
+
+\begin{ressubsecPu}{\textbf{[5]\emph{ Deep Ensemble Analysis for Imaging X-ray Polarimetry}}\\ \textbf{A.L.Peirson}, R.W.Romani, H.L.Marshall, J.F.Steiner, L.Baldini.  \href{https://www.sciencedirect.com/science/article/pii/S0168900220311372?via\%3Dihub}{\emph{NIMA}, 986}, 2020}
+	\end{ressubsecPu}
+
+\vspace{2pt}
+
+
+\begin{ressubsecPu}{\textbf{[4]\emph{ The Polarization Behavior of Relativistic Synchrotron Self-Compton Jets}} [\href{https://github.com/alpv95/SSCpol}{Code}]\\ \textbf{A.L.Peirson}, R.W.Romani. \href{https://iopscience.iop.org/article/10.3847/1538-4357/ab46b1}{\emph{ApJ}, 885, 1}, 2019}
+	\end{ressubsecPu}
+\vspace{2pt}
+
+\begin{ressubsecPu}{\textbf{[3]\emph{ Prospects for Detecting X-ray Polarization in Blazar Jets}}\\ I.Liodakis, \textbf{A.L.Peirson}, R.W.Romani. \href{https://iopscience.iop.org/article/10.3847/1538-4357/ab2719}{\emph{ApJ}, 880, 1}, 2019}
+	\end{ressubsecPu}
+\vspace{2pt}
+
+\begin{ressubsecPu}{\textbf{[2]\emph{ The Polarization Behavior of Relativistic Synchrotron Jets}}\\ \textbf{A.L.Peirson}, R.W.Romani. \href{https://iopscience.iop.org/article/10.3847/1538-4357/aad69d/meta}{\emph{ApJ}, 864, 2}, 2018}
+	\end{ressubsecPu}
+\vspace{2pt}
+
+\begin{ressubsecPu}{\textbf{[1]\emph{ Transverse Beam Phase-Space Measurement Experience at CTF3}}\\ D.Gamba, L.Martin, \textbf{A.L.Peirson Serratosa} et al. \href{http://accelconf.web.cern.ch/ipac2017/doi/JACoW-IPAC2017-MOPAB115.html}{\emph{IPAC2017}}, 2017}
+	\end{ressubsecPu}
+
+
+\end{ressection}
+
+\begin{ressection}{\textbf{Whitepapers \& Other Publications}}
+
+\begin{ressubsecPu}{\textbf{[3]\emph{ Neural Network Analysis of X-ray Polarimeter Data}}\\ A.L.Peirson, \emph{The Handbook of X-ray and Gamma Ray Astrophysics}, \emph{Springer Nature}, 2022}
+	\end{ressubsecPu}
+\vspace{2pt}
+
+\begin{ressubsecPu}{\textbf{[2]\emph{ The X-ray Polarization Probe Mission Concept}}\\ K.Jahoda et al. \emph{Decadal Survey on Astronomy and Astrophysics}, \href{https://arxiv.org/abs/1907.10190}{1907.10190}, 2020}
+	\end{ressubsecPu}
+	\vspace{2pt}
+
+\begin{ressubsecPu}{\textbf{[1]\emph{ Dank Learning: Generating Memes Using Deep Neural Networks}} [\href{https://github.com/alpv95/MemeProject}{Code}][\href{https://techcrunch.com/2018/06/15/dank-learning-system-autogenerates-memes/}{Techcrunch}][\href{https://thenextweb.com/artificial-intelligence/2018/06/15/stanford-researchers-taught-ai-to-make-dank-memes/}{The Next Web}]\\ \textbf{A.L.Peirson}, E.M.Tolunay, \href{https://arxiv.org/abs/1806.04510?source=techstories.org}{1806.04510}, 2018} 
+% \begin{itemize}
+%     \item \href{https://techcrunch.com/2018/06/15/dank-learning-system-autogenerates-memes/}{Techcrunch -- Dank learning system autogenerates memes}
+%     \vspace{-2pt}
+%     \item \href{https://thenextweb.com/artificial-intelligence/2018/06/15/stanford-researchers-taught-ai-to-make-dank-memes/}{The Next Web -- Stanford researchers taught AI to make dank memes}
+    % \vspace{-2pt}
+    % \item \href{https://alexmoltzau.medium.com/dank-learning-information-gerrymandering-2e5d5812aff8}{Medium -- Dank Learning \& Information Gerrymandering}
+    % \vspace{-8pt}
+% \end{itemize} }
+
+	\end{ressubsecPu}
+	
+\end{ressection}
+
+% \textbf{\textit{APPHYS293}} (Theoretical Neuroscience)\\
+% \textbf{\textit{CS379C}} (Computational Models of the Neocortex)\\
+% \textbf{\textit{CS238}} (Decision Making Under Uncertainty)\\ \textbf{\textit{STATS207}} (Time Series)\\ \textbf{\textit{CS230}} (Deep Learning)\\ \textbf{\textit{CS224N}} (Natural Language Processing)\\ \textbf{\textit{EE364a}} (Convex Optimization)\\
+% \textbf{\textit{EE364b}} (Convex Optimization II)\\ 
+% \textbf{\textit{CS106b}} (Programming Abstractions)\\
+% \textbf{\textit{CS361}} (Engineering Design Optimization) \\ 
+% \textbf{\textit{EE263}} (Linear Dynamical Systems)\\
+% \begin{ressection}{\textbf{Selected Experience \& Outreach}}
+
+% 	\vspace{2pt}
+
+% % 	\begin{ressubsec}{Self-Employed}{New Malden, UK}{2014 - Present \\ Physics and Mathematics Tutor}
+% % 		%{\bf \rmfamily{Co-Founder}} \\
+% %                  \ressubitem{Tutoring private clients in Physics and Mathematics.}
+% % 	\end{ressubsec}
+	
+% 	\vspace{-1pt}
+% 	\begin{ressubsec}{Wonderfest}{Bay Area, CA}{June 2019 - June 2020  \\ Science Envoy}
+%                 \ressubitem{Selected as one of 10 graduate students from Stanford and Berkeley.}
+%                 \ressubitem{Communicated science to public audiences as part of the Bay Area-wide Wonderfest program}
+%                 \ressubitem{Followed a training program in public speaking and science communication}
+%                 % Communicating science to public audiences as part of the Bay Area-wide Wonderfest program, taking place concurrently with a training program in public speaking and science communication for 10 graduate students selected from Stanford and Berkeley.}%Wonderfest’s Science Envoy Program, funded in part by the Gordon and Betty Moore Foundation, identifies PhD students who show particular science-popularization promise. We help the budding researchers to develop the subtle art and science of public outreach.  The program’s participants emerge as articulate Science Envoys, appearing before live Wonderfest audiences that are eager for their insights.}
+% 	\end{ressubsec}
+	
+% 	\begin{ressubsec}{Stanford Judo Club}{Stanford, CA}{June 2019 - June 2020  \\ President}
+%                 \ressubitem{Led the club as captain in competitions.}
+%                 \ressubitem{Set the annual budget and ran all financial matters for both the adults' and children's club.}
+%                 % \ressubitem{Set the annual budget.}
+%                 % including setting the annual budget, communicating with Stanford's capital group, handling reimbursements and organising tournaments.}
+% 	\end{ressubsec}
+	
+% 	\begin{ressubsec}{Stanford Diversity and First Generation Office}{Stanford, CA}{October 2018 - October 2020  \\ First Generation and Low Income Student Mentor}
+%                 \ressubitem{Mentoring undergraduates from underprivileged backgrounds in all matters of student life.}
+% 	\end{ressubsec}
+	
+% 	\begin{ressubsec}{SLAC Accelerating Girls' Engagement in STEM (SAGE-S)}{Stanford, CA}{Summer 2019 \\ Volunteer}
+%                 \ressubitem{Teaching girls from local public high schools astronomy and astrophysics at the Stanford student observatory.}
+% 	\end{ressubsec}
+    
+% %     \begin{ressubsec}{Stanford Astronomical Society}{Stanford, CA}{2018 - 2019  \\ Leading Committee Member}
+% %                 \ressubitem{Organising and participating in telescope outreach events with the local Palo Alto elementary/high school students and the public. Teaching Stanford students how to operate optical telescopes.}
+% % 	\end{ressubsec}
+    
+% %     \begin{ressubsec}{Stanford Office of Science Outreach}{Stanford, CA}{2018 - 2019  \\ Stanford Science Penpal}
+% %                 \ressubitem{Corresponding with high school students about science at Colegi Sant Pau Apostol in Tarragona, Spain.}
+% % 	\end{ressubsec}
+    
+%     \begin{ressubsec}{Peirson \& Freedman}{Stanford, CA}{August 2018 - Present  \\ App Designer}
+%                 \ressubitem{Conceived and designed iOS app \textbf{\emph{\href{https://danklearning.com/}{Dank Learning}}} that uses AI to generate memes.}
+% 	\end{ressubsec}
+    
+% 	\begin{ressubsec}{Christ Church Boat Club}{Oxford, UK}{Jun 2015 - Jun 2016  \\ Boat Club Social Secretary}
+% 		%{\bf \rmfamily{Yale Undergraduate Energy Scholar}} \\
+%                 \ressubitem{Provided with a sizable budget to organise events for current and old members of the boat club – regatta dinners and crew dates. Also responsible for maintaining a healthy social dynamic within the boat club between all levels of men and women’s crews.}
+% 	\end{ressubsec}
+	
+% 	%\vspace{20pt}
+	
+% % 	\begin{ressubsec}{Seven Hills}{London, UK}{Sep 2014 \\ Intern}
+% % 		\ressubitem{Formulating press releases through analysis of client company portfolios, reorganising the company’s contact database and extensive use of overseas telephone lines to advertise large client company events.}
+% % 	\end{ressubsec}
+	
+% % 	\vspace{-1pt}
+		
+% % 	\begin{ressubsec}{McKay Williamson}{London, UK}{Aug 2014 \\ Media Analyst}
+% % 		%{\bf \rmfamily{Co-Founder}} \\
+% %                  \ressubitem{Performed a range of artistic editing tasks on films, portraits, posters using video editing software and photoshop.}
+% % 	\end{ressubsec}
+
+% % 	\vspace{-1pt}
+	
+% 	\begin{ressubsec}{Oxford Student}{Oxford, UK}{April 2014 - Jul 2014 \\ Arts and Literature Editor}
+% 	\ressubitem{Publishing, writing and editing articles on a variety of topics ranging from poetry to film criticism. Designing the newspaper layout using wordpress.}
+% 	\end{ressubsec}
+	
+% 	\vspace{-1pt}
+    
+% 	\begin{ressubsec}{Leukaemia and Lymphoma Research}{London, UK}{Oct 2012\\ Rower}
+% 	\end{ressubsec}
+    
+%     \vspace{-1pt}
+    
+% 	\begin{ressubsec}{ICAP}{London, UK}{Aug 2012 \\ Intern}
+% 	\ressubitem{Positioned on the foreign exchange broking desk, I gained an insight into the fluidity of the market even during the low season. I was able to learn by observation, communication and performing in simulated broking situations.}
+% 	\end{ressubsec}
+		
+	%\vspace{3pt}
+
+% \end{ressection}
+
+%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%
+% \begin{ressection}{\textbf{Skills}}
+
+%  		\resitem{\textbf{Languages:} Spanish (native), English (native).}
+		
+% 		\vspace{1pt}
+		
+% 		\resitem{\textbf{Software (extensive):} C, C++, Python, PyTorch, Tensorflow, Git, \LaTeX.} %add pytorch tensorflow keras etc.
+		
+% 		\vspace{1pt}
+		
+% 		\resitem{\textbf{Software (basic):} R, Julia, MPI, Bash, HTML, MATLAB, Mathematica, Swift, Adobe Illustrator.}
+		
+% 		\vspace{1pt}
+
+% % 		\ressubitem{Substantial tutoring experience (100+ hours) teaching Physics and Mathematics at high school level.}
+		
+% % 		\vspace{-1pt}
+
+% 		\resitem{Ham Radio Technician License.}
+                
+% \end{ressection}
+
+%%%%%%%%%%%%%%%%%%%
+
+% \begin{ressection}{\textbf{Athletic Achievements}}
+
+
+%     \begin{ressubsec}{Stanford Judo Club Men's Team (President/Captain)}{Stanford, CA}{Oct 2017 - Present}
+%     \ressubitem{San Jose Buddhist Tournament, Team Champions 2018, 2019}
+% 	\end{ressubsec}
+%     \begin{ressubsec}{Christ Church Boat Club Men's 1st VIII}{Oxford, UK}{May 2014 - Jun 2017}
+%     \ressubitem{Summer VIIIs Head of the River 2017.}
+% 	\end{ressubsec}
+% \begin{ressubsec}{Oxford-Cambridge Boat Race Triallist}{Oxford, UK}{2015}
+% 	\end{ressubsec}
+    
+
+%     \begin{ressubsec}{Kingston Grammar School Boat Club Men's 1st Pair}{Kingston, UK}{2012-2013}
+%     \ressubitem{Hampton, Kingston, Teddington and Upper Thames Head of the River.}
+% 	\end{ressubsec}
+%     \begin{ressubsec}{Kingston Grammar School Boat Club Men's 1st VIII}{Kingston, UK}{2010-2013}
+%     \ressubitem{Raced for Princess Elizabeth Challenge Cup, Henley 2012,2013.}
+%     \ressubitem{1st IV holders of Percy England Challenge Cup, Thames Ditton.}
+% 	\end{ressubsec}
+    
+%     \begin{ressubsec}{Great Britain Men's Junior Rowing Team Triallist }{Kingston, UK}{2011}
+% 	\end{ressubsec}
+% \end{ressection}
+
+% \vspace{-4pt}
+
+                
+\end{document}
+
