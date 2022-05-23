@@ -28,6 +28,22 @@ Research Intern, CLIC Test Facility, CERN, Summer 2016, Advisor: Philip Burrows
 
 ## Invited Talks
 <div class="list">
+TBD, IAUS 375: The Multimessenger Chakra of Blazar Jets, Kathmandu, Nepal 2022
+
+X-ray polarimetry: A data intensive science, Stanford Data Science, 2022
+
+Tests of gravitational milli-lensing in the blazar PKS 1413+135, Max Planck Institute for Radio Astronomy, 2022
+
+Optimal Signal Extraction for IXPE and an Application to Blazars, Naval Research Laboratory Colloquium, 2021
+
+Towards Optimal Signal Extraction for IXPE, Third Science Collaboration Meeting (SCM03), 2021
+
+The Polarization Behavior of Synchrotron Self-Compton Emission in Blazars, Understanding the Multiwavelength Blazar Variability - Workshop, Stanford, 2019
+
+AI in Design, Used Future: Symposium by Current Obsession, Pratt Institute NY, 2018
+
+[Episode 68](https://blogs.nvidia.com/ai-podcast/), The NVIDIA AI Podcast, 2018
+
 </div>
 
 ## Publications
