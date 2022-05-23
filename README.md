@@ -1,6 +1,5 @@
 # Abel Lawrence Peirson
-[alpv95@stanford.edu](mailto:alpv95@stanford.edu), [https://www.alpeirson.com](https://alpv95.github.io)
-
+[alpv95@stanford.edu](mailto:alpv95@stanford.edu), [https://www.alpeirson.com](https://alpv95.github.io)  
 PhD Student, Kavli Institute for Particle Astrophysics and Cosmology, Stanford University
 
 ## Education
