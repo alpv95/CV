@@ -28,7 +28,8 @@ Research Intern, CLIC Test Facility, CERN, Summer 2016, Advisor: Philip Burrows
 
 ## Invited Talks
 <div class="list">
-TBD, IAUS 375: The Multimessenger Chakra of Blazar Jets, Kathmandu, Nepal 2022
+
+TBD, IAUS 375: The Multimessenger Chakra of Blazar Jets, Kathmandu, Nepal 2022  
 
 X-ray polarimetry: A data intensive science, Stanford Data Science, 2022
 
