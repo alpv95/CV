@@ -118,7 +118,7 @@
 % This is a list that comes with a resbigitem
 \newenvironment{ressubsecP}[3]{
 	\resbigitem{#1}{#2}{#3}
-	\vspace{-2pt}
+	\vspace{2pt}
 
 }
 
@@ -139,6 +139,10 @@
 	\end{itemize}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Industry or Academia
+\newif\ifacademia
+\academiatrue
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -176,64 +180,31 @@
 		\ressubitem{College: Christ Church}
 	\end{ressubsec}
 \end{ressection}
-
 %%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{ressection}{\textbf{Fellowships, Honors \& Awards}}
 	\vspace{2pt}
 	\begin{ressubsecP}{Stanford Data Science Scholar (\$100k+)}{Stanford, USA}{2021}
 	\end{ressubsecP}
-	\vspace{3pt}
+
 	\begin{ressubsecP}{Future Investigator in NASA Earth and Space Science and Technology (\$160k+)}{Stanford, USA}{2019}
 	\end{ressubsecP}
-% \vspace{3pt}
-% \begin{ressubsecP}{Roach Prize for the most outstanding undergraduate across the sciences}{Oxford, UK}{2017}
-% \end{ressubsecP}
-	\vspace{3pt}
-\begin{ressubsecP}{Hooke and Roach prizes for most outstanding member of Christ Church across the sciences}{Oxford, UK}{2017}
+
+	\begin{ressubsecP}{Hooke and Roach prizes for most outstanding member of Christ Church across the sciences}{Oxford, UK}{2017}
 	\end{ressubsecP}
-	\vspace{3pt}
+
 	\begin{ressubsecP}{Oxford International Strategy Scholarship}{Oxford, UK}{2016}
 	\end{ressubsecP}
-	\vspace{3pt}
-	\begin{ressubsecP}{Christ Church Academic Scholarship}{Oxford, UK}{2014-2017}
-		%\ressubitem{Scholarship awarded yearly for outstanding performance in university examinations - achieving distinction. }
-	\end{ressubsecP}
-	% 	\vspace{3pt}
-	% 	\begin{ressubsecP}{Christ Church Collections Prize}{Oxford, UK}{2015,2014,2013}
-	%\ressubitem{Prize awarded termly for best performance in college examinations (received prize every term since beginning of degree).}
-	% 	\end{ressubsecP}
-	\vspace{3pt}
-	\begin{ressubsecP}{Gold, British Physics Olympiad}{London, UK}{2013}
-		%\ressubitem{Prize signifying a top 50 in the country place finish in the British Physics Olympiad.}
-	\end{ressubsecP}
-	\vspace{3pt}
-	% 	\begin{ressubsecP}{Kingston Grammar School Academic Scholarship}{Kingston, UK}{2008-2013}
-	% 	%\ressubitem{Awarded on the basis of exceptional academic merit, funded school tuition fees.}
-	% 	\end{ressubsecP}
-	% 	\vspace{3pt}
-	%     \begin{ressubsecP}{KGS Governors' Prize}{Kingston, UK}{Jun 2013}
-	% 	%\ressubitem{Awarded for the greatest all-round contribution to the school.}
-	% 	\end{ressubsecP}
-	%     \vspace{3pt}
-	% 	\begin{ressubsecP}{KGS J.A.Strover Prize}{Kingston, UK}{Jun 2013}
-	% 	%\ressubitem{Awarded to the student attaining the highest achievement in the field of Mathematics in the school, as judged by the school staff.}
-	% 	\end{ressubsecP}
-	%     \vspace{3pt}
-	%     \begin{ressubsecP}{KGS Val Packer Prize}{Kingston, UK}{Jun 2013}
-	% 	%\ressubitem{Awarded to the student attaining the highest achievement in the field of Physics in the school, as judged by the school staff.}
-	% 	\end{ressubsecP}
-	%     \vspace{3pt}
-	% 	\begin{ressubsecP}{KGS Best Extended Project Prize}{Kingston, UK}{Sep 2012}
-	% 	%\ressubitem{Awarded for the best Extended Project in the school (constructing and operating a functional Armillary Sphere).}
-	% 	\end{ressubsecP}
 
+	\begin{ressubsecP}{Christ Church Academic Scholarship}{Oxford, UK}{2014-2017}
+	\end{ressubsecP}
+
+	\begin{ressubsecP}{Gold, British Physics Olympiad}{London, UK}{2013}
+	\end{ressubsecP}
 
 \end{ressection}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-
-\vspace{-0pt}
 
 \begin{ressection}{\textbf{Research}}
 
@@ -260,8 +231,7 @@
 
 	\vspace{2pt}
 	\begin{ressubsec}{NeuroAI Lab}{Stanford University, CA}{Dec 2017 - Mar 2018 \\ with \textbf{Prof. Dan Yamins}}
-\ressubitem{Unsupervised learning: found transfer-learning with shear transformations of images does not improve classification accuracies.}
-
+	\ressubitem{Unsupervised learning: found transfer-learning with shear transformations of images does not improve classification accuracies.}
 		%  Investigating unsupervised visual learning models, namely whether learning affine transformations can be transferred to improved accuracies in object classification, using RotNet and ImageNet datasets.}
 	\end{ressubsec}
 
@@ -289,6 +259,7 @@
 
 \end{ressection}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{ressection}{\textbf{Selected Experience}}
 \begin{ressubsec}{Google Research, Brain Team}{Mountain View, CA}{June - Sep 2022  \\ Student Researcher}
@@ -300,27 +271,87 @@
 	\end{ressubsec}
 	\vspace{2pt}
 	\begin{ressubsec}{Peirson \& Freedman}{Stanford, CA}{Aug 2018 - Present  \\ Co-founder}
-\ressubitem{Conceived and designed iOS app \textbf{\emph{\href{https://danklearning.com/}{Dank Learning}}} that uses RNNs to generate memes.}
+\ressubitem{Conceived and designed iOS app \textbf{\emph{Dank Learning}} that uses RNNs to generate memes. [\href{https://danklearning.com/}{Webpage}]}
 	\end{ressubsec}
-	\vspace{2pt}
+
+\end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{ressection}{\textbf{Publications}}
+
+\resitem{Refereed: \textbf{10 first / second author papers}, 10 collaboration papers (see attached publication list).}
+
+\resitem{Metrics: \textbf{h-index: 7, citations: 112}. Journals: ApJ (Letters), Science, Nature, NIMA, Neurips (workshops).}
+
+\end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifacademia
+\begin{ressection}{\textbf{Outreach and Service}}
+
 	\begin{ressubsec}{Wonderfest}{Bay Area, CA}{June 2019 - June 2020  \\ Science Envoy}
-\ressubitem{Selected as one of 10 graduate students from Stanford and Berkeley to communicate science to public audiences.}
-% \ressubitem{Communicated science to public audiences as part of the Bay Area-wide Wonderfest program}
+	\ressubitem{Selected as one of 10 graduate students from Stanford and Berkeley to communicate science to public audiences.}
 	\end{ressubsec}
-	% 	\vspace{2pt}
+
+	\begin{ressubsec}{Stanford Diversity and First Generation Office}{Stanford, CA}{Oct 2018 - June 2020  \\ First Generation and Low Income Student Mentor}
+		\ressubitem{Mentoring undergraduates from underprivileged backgrounds in all matters of student life.}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Stanford Astronomical Society}{Stanford, CA}{Oct 2018 - Oct 2019  \\ Organizing Member}
+		\ressubitem{Organizing and leading stargazing events for local schools and the public.}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Stanford Science Pen Pals}{Stanford, CA}{Oct 2018 - Oct 2019  \\ Pen Pal}
+		\ressubitem{Corresponding about science with 5th graders from a low-income school in Catalonia.}
+	\end{ressubsec}
+
 	% 	\begin{ressubsec}{Stanford Judo Club}{Stanford, CA}{June 2019 - June 2020  \\ President}
 	%                 \ressubitem{Led the club as captain in competitions.}
 	%                 \ressubitem{Set the annual budget and ran all financial matters for both the adults' and children's club.}
 	% 	\end{ressubsec}
-% \vspace{2pt}
-% \begin{ressubsec}{Stanford Diversity and First Generation Office}{Stanford, CA}{Oct 2018 - Oct 2020  \\ First Generation and Low Income Student Mentor}
-% 	\ressubitem{Mentoring undergraduates from underprivileged backgrounds in all matters of student life.}
-% \end{ressubsec}
-\end{ressection}
 
-\begin{ressection}{\textbf{Selected Invited Talks}}
-\begin{ressubsecPu}{\textbf{\emph{IXPE: Science so far}}, \emph{IAUS 375: The Multimessenger Chakra of Blazar Jets}, 2022}
-\end{ressubsecPu}
+\end{ressection}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifacademia
+\begin{ressection}{\textbf{Mentoring}}
+
+	\begin{ressubsecP}{Jack Dinsmore (graduate)}{Polarization leakage in the IXPE gas pixel detector}{2022-Present}
+	\end{ressubsecP}
+
+	\begin{ressubsecP}{Josephine Wong (graduate)}{Simultaneous polarization fitting of the Crab nebula and pulsar}{2021-Present}
+	\end{ressubsecP}
+
+\end{ressection}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifacademia
+\begin{ressection}{\textbf{Media}}
+
+	\begin{ressubsecPu}{\textbf{\emph{IXPE: Science so far}}, \emph{IAUS 375: The Multimessenger Chakra of Blazar Jets}, 2022}
+	\end{ressubsecPu}
+
+	\begin{ressubsecPu}{\textbf{\emph{Episode 68}, \textbf{The NVIDIA AI Podcast}}, 2018 [\href{https://blogs.nvidia.com/ai-podcast/}{Recording}]}
+	\end{ressubsecPu}
+
+\end{ressection}
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{ressection}{\textbf{Recent \& Upcoming Presentations}}
+	\resitem{\textbf{\textcolor{Mycolor2}{Invited}}}
+	\vspace{2pt}
+
+	\begin{ressubsecPu}{\textbf{\emph{IXPE: Science so far}}, \emph{IAUS 375: The Multimessenger Chakra of Blazar Jets}, Dec 2022}
+	\end{ressubsecPu}
+
+	\begin{ressubsecPu}{\textbf{\emph{X-ray Polarimetry: A data intensive science}}, \emph{Stanford Data Science Seminar}, 2022}
+	\end{ressubsecPu}
 
 	\begin{ressubsecPu}{\textbf{\emph{Tests of gravitational milli-lensing in the blazar PKS 1413+135}}, \emph{Max Planck Institute for Radio Astronomy}, 2022}
 	\end{ressubsecPu}
@@ -337,56 +368,54 @@
 	\begin{ressubsecPu}{\textbf{\emph{AI in Design}}, \textbf{Used Future: Symposium by Current Obsession}, Pratt Institute NY, 2018}
 	\end{ressubsecPu}
 
-	\begin{ressubsecPu}{\textbf{ \href{https://blogs.nvidia.com/ai-podcast/}{\emph{Episode 68}, \textbf{The NVIDIA AI Podcast}}}, 2018}
+	\begin{ressubsecPu}{\textbf{\emph{Episode 68}, \textbf{The NVIDIA AI Podcast}}, 2018 [\href{https://blogs.nvidia.com/ai-podcast/}{Recording}]}
+	\end{ressubsecPu}
+
+	\vspace{2pt}
+	\resitem{\textbf{\textcolor{Mycolor2}{Contributed}}}
+	\vspace{2pt}
+
+	\begin{ressubsecPu}{\textbf{\emph{High-Energy Polarization Properties of Relativistic Jets}}, \emph{Columbia Theoretical High-Energy Astrophysics Seminar}, Nov 2022}
+	\end{ressubsecPu}
+
+	\begin{ressubsecPu}{\textbf{\emph{Fishy: Local Fisher Approximation via Shampoo}}, \emph{Alphabet ML Summit}, Nov 2022}
+	\end{ressubsecPu}
+
+	\begin{ressubsecPu}{\textbf{\emph{Blazar rotations with IXPE}}, \emph{KIPAC Tea}, Oct 2022}
+	\end{ressubsecPu}
+
+	\begin{ressubsecPu}{\textbf{\emph{A Geometric Model for Blazar Rotations}}, \emph{Meeting of the European Astronomical Society}, 2020}
 	\end{ressubsecPu}
 
 \end{ressection}
 
-
-
-
-
-% \vspace{-4pt}
-
 %%%%%%%%%%%%%%%%%%%%%%%%
 
-\vspace{-0pt}
+\ifacademia
+\begin{ressection}{\textbf{Telescope \& Computing Allocations}}
+	\vspace{2pt}
+	\begin{ressubsecP}{ALMA}{\textnormal{\emph{High-frequecy radio observations of IXPE targets}, 7-14 day (Co-I)}}{2021}
+	\end{ressubsecP}
 
-\vspace{-0pt}
+	\begin{ressubsecP}{Nordic Optical Telescope}{\textnormal{\emph{Multi-band polarization observations of IXPE targets}, 87ks (Co-I)}}{2021}
+	\end{ressubsecP}
 
+	\begin{ressubsecP}{NuStar}{\textnormal{\emph{Multi-Energy X-ray observations of IXPE blazar targets}, 140ks (Co-I)}}{2021}
+	\end{ressubsecP}
 
-% \begin{ressection}{Research Interests}
+	\begin{ressubsecP}{Swift}{\textnormal{\emph{Monitoring IXPE blazar targets with Swift}, 240ks (Co-I)}}{2020}
+	\end{ressubsecP}
 
-% 	\vspace{-1pt}
+	\begin{ressubsecP}{Google Cloud Platform}{\textnormal{\emph{Parametric Density Estimation with Uncertainty using Deep Ensembles}, \$1000}}{2020}
+	\end{ressubsecP}
 
-% 	\ressubitem{Physics interests include theoretical astrophysics, accelerator physics, plasma \& fusion physics, experimental HEP, astroparticle physics, and astrophysical flows.}
+	\begin{ressubsecP}{XMM-Newton}{\textnormal{\emph{Exploring the Synchro-Compton transition in CGRaBS J0211+1051}, 57ks (Co-I)}}{2019}
+	\end{ressubsecP}
 
-% 	\vspace{-3pt}
+\end{ressection}
+\fi
 
-% \end{ressection}
-
-
-% \begin{ressection}{\textbf{Telescope \& Computing Allocations}}
-% 	\vspace{2pt}
-% 	\begin{ressubsecP}{ALMA}{\textnormal{\emph{High-frequecy radio observations of IXPE targets}, 7-14 day (Co-I)}}{2021}
-% 	\end{ressubsecP}
-% 	\vspace{4pt}
-% 	\begin{ressubsecP}{Nordic Optical Telescope}{\textnormal{\emph{Multi-band polarization observations of IXPE targets}, 87ks (Co-I)}}{2021}
-% 	\end{ressubsecP}
-% 	\vspace{4pt}
-% 	\begin{ressubsecP}{NuStar}{\textnormal{\emph{Multi-Energy X-ray observations of IXPE blazar targets}, 140ks (Co-I)}}{2021}
-% 	\end{ressubsecP}
-% 	\vspace{4pt}
-% 	\begin{ressubsecP}{Swift}{\textnormal{\emph{Monitoring IXPE blazar targets with Swift}, 240ks (Co-I)}}{2020}
-% 	\end{ressubsecP}
-% 	\vspace{4pt}
-% 	\begin{ressubsecP}{Google Cloud Platform}{\textnormal{\emph{Parametric Density Estimation with Uncertainty using Deep Ensembles}, \$1000}}{2020}
-% 	\end{ressubsecP}
-% 	\vspace{4pt}
-% 	\begin{ressubsecP}{XMM-Newton }{\textnormal{\emph{Exploring the Synchro-Compton transition in CGRaBS J0211+1051}, 57ks (Co-I)}}{2019}
-% 	\end{ressubsecP}
-
-% \end{ressection}
+%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{ressection}{\textbf{Open Source Software} ($\bigstar$500+)}
 
@@ -402,14 +431,16 @@
 
 \end{ressection}
 
+\ifacademia
 \begin{ressection}{\textbf{Teaching}}
 	\vspace{2pt}
 	\begin{ressubsecP}{Stanford PHYS113}{\textnormal{\emph{Computational Physics} (Lecturer and Teaching Assistant)}}{Winter 2021}
 	\end{ressubsecP}
-	\vspace{4pt}
+
 	\begin{ressubsecP}{Stanford PHYS100}{\textnormal{\emph{Introduction to Observational Astrophysics} (Teaching Assistant)}}{Spring 2019}
 	\end{ressubsecP}
 \end{ressection}
+\fi
 
 \begin{ressection}{\textbf{Graduate Coursework}}
 	\vspace{-8pt}
@@ -445,7 +476,6 @@
 
 \begin{ressection}{\textbf{First and Co-Authored Publications}}
 
-
 \begin{ressubsecPu}{\textbf{\emph{Fishy: Layerwise Fisher Approximation for Higher-Order Neural Network Optimization
 			}}\\ \textbf{A.L.Peirson}, E.Amid, M.K.Warmuth, R.Anil \href{}{\emph{Neurips HITY workshop} submitted}, 2022}
 \end{ressubsecPu}
@@ -458,22 +488,22 @@
 
 \vspace{2pt}
 
+\ifacademia
+\else
 \begin{ressubsecPu}{\textbf{\emph{Neural Network Analysis of X-ray Polarimeter Data}}\\ \textbf{A.L.Peirson}, \emph{The Handbook of X-ray and Gamma Ray Astrophysics}, \href{https://arxiv.org/abs/2206.10537}{\emph{Springer Nature}}, 2022}
 \end{ressubsecPu}
-
 \vspace{2pt}
-
+\fi 
 
 \begin{ressubsecPu}{\textbf{\emph{A Deep Ensemble Approach to X-ray Polarimetry}}\\ \textbf{A.L.Peirson}, R.W.Romani \href{https://arxiv.org/abs/2111.03047}{\emph{Neurips ML4PS workshop}}, 2021}
 	\end{ressubsecPu}
 
-	\vspace{2pt}
+\vspace{2pt}
 
 \begin{ressubsecPu}{\textbf{\emph{New Tests of Millilensing in the Blazar PKS 1413+135}}\\ \textbf{A.L.Peirson}, I.Liodakis, A.C.S.Readhead et al. \href{https://iopscience.iop.org/article/10.3847/1538-4357/ac469e}{\emph{ApJ}, 927, 24}, 2022}
 	\end{ressubsecPu}
 
-	\vspace{2pt}
-
+\vspace{2pt}
 
 \begin{ressubsecPu}{\textbf{\emph{Towards Optimal Signal Extraction for Imaging X-ray Polarimetry}}\\ \textbf{A.L.Peirson}, R.W.Romani. \href{https://iopscience.iop.org/article/10.3847/1538-4357/ac157d/pdf}{\emph{ApJ}, 920, 40}, 2021}
 \end{ressubsecPu}
@@ -484,7 +514,6 @@
 \end{ressubsecPu}
 
 \vspace{2pt}
-
 
 \begin{ressubsecPu}{\textbf{\emph{The Polarization Behavior of Relativistic Synchrotron Self-Compton Jets}} [\href{https://github.com/alpv95/SSCpol}{Code}]\\ \textbf{A.L.Peirson}, R.W.Romani. \href{https://iopscience.iop.org/article/10.3847/1538-4357/ab46b1}{\emph{ApJ}, 885, 1}, 2019}
 \end{ressubsecPu}
@@ -502,6 +531,8 @@
 \end{ressubsecPu}
 
 \end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{ressection}{\textbf{Publications}}
 
@@ -541,9 +572,12 @@
 \end{ressubsecPu}
 \vspace{2pt}
 
+\ifacademia
+\else
 \begin{ressubsecPu}{\textbf{\emph{The X-ray Polarization Probe Mission Concept}}\\ K.Jahoda et al. (incl. \textbf{A.L.Peirson}) \emph{Decadal Survey on Astronomy and Astrophysics}, \href{https://arxiv.org/abs/1907.10190}{1907.10190}, 2020}
 \end{ressubsecPu}
 \vspace{2pt}
+\fi
 
 \begin{ressubsecPu}{\textbf{\emph{Transverse Beam Phase-Space Measurement Experience at CTF3}}\\ D.Gamba, L.Martin et al. (incl. \textbf{A.L.Peirson}) \href{http://accelconf.web.cern.ch/ipac2017/doi/JACoW-IPAC2017-MOPAB115.html}{\emph{IPAC2017}}, 2017}
 \end{ressubsecPu}
@@ -551,17 +585,19 @@
 \end{ressection}
 
 
-% \begin{ressection}{\textbf{Whitepapers \& Textbooks}}
+\ifacademia
+\newpage
+\begin{ressection}{\textbf{Whitepapers \& Textbooks}}
 
-% \begin{ressubsecPu}{\textbf{\emph{Neural Network Analysis of X-ray Polarimeter Data}}\\ \textbf{A.L.Peirson}, \emph{The Handbook of X-ray and Gamma Ray Astrophysics}, \href{https://arxiv.org/abs/2206.10537}{\emph{Springer Nature}}, 2022}
-% \end{ressubsecPu}
-% \vspace{2pt}
+\begin{ressubsecPu}{\textbf{\emph{Neural Network Analysis of X-ray Polarimeter Data}}\\ \textbf{A.L.Peirson}, \emph{The Handbook of X-ray and Gamma Ray Astrophysics}, \href{https://arxiv.org/abs/2206.10537}{\emph{Springer Nature}}, 2022}
+\end{ressubsecPu}
+\vspace{2pt}
 
-% \begin{ressubsecPu}{\textbf{\emph{The X-ray Polarization Probe Mission Concept}}\\ K.Jahoda et al. (incl. \textbf{A.L.Peirson}) \emph{Decadal Survey on Astronomy and Astrophysics}, \href{https://arxiv.org/abs/1907.10190}{1907.10190}, 2020}
-% \end{ressubsecPu}
+\begin{ressubsecPu}{\textbf{\emph{The X-ray Polarization Probe Mission Concept}}\\ K.Jahoda et al. (incl. \textbf{A.L.Peirson}) \emph{Decadal Survey on Astronomy and Astrophysics}, \href{https://arxiv.org/abs/1907.10190}{1907.10190}, 2020}
+\end{ressubsecPu}
 
-% \end{ressection}
-
+\end{ressection}
+\fi
 
 \end{document}
 
