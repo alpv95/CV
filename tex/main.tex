@@ -145,10 +145,19 @@
 \academiatrue
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Publication list only
+\newif\ifpubsonly
+\pubsonlyfalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
 \newcommand{\zhs}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
 
 \fontfamily{ppl} \selectfont
+
+\ifpubsonly
+\else
 
 % Name with horizontal rule
 \centerline{\huge{\textbf{\textcolor{Mycolor2}{Abel Lawrence Peirson}}}}
@@ -288,61 +297,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ifacademia
-\begin{ressection}{\textbf{Outreach and Service}}
-
-	\begin{ressubsec}{Wonderfest}{Bay Area, CA}{June 2019 - June 2020  \\ Science Envoy}
-	\ressubitem{Selected as one of 10 graduate students from Stanford and Berkeley to communicate science to public audiences.}
-	\end{ressubsec}
-
-	\begin{ressubsec}{Stanford Diversity and First Generation Office}{Stanford, CA}{Oct 2018 - June 2020  \\ First Generation and Low Income Student Mentor}
-		\ressubitem{Mentoring undergraduates from underprivileged backgrounds in all matters of student life.}
-	\end{ressubsec}
-
-	\begin{ressubsec}{Stanford Astronomical Society}{Stanford, CA}{Oct 2018 - Oct 2019  \\ Organizing Member}
-		\ressubitem{Organizing and leading stargazing events for local schools and the public.}
-	\end{ressubsec}
-
-	\begin{ressubsec}{Stanford Science Pen Pals}{Stanford, CA}{Oct 2018 - Oct 2019  \\ Pen Pal}
-		\ressubitem{Corresponding about science with 5th graders from a low-income school in Catalonia.}
-	\end{ressubsec}
-
-	% 	\begin{ressubsec}{Stanford Judo Club}{Stanford, CA}{June 2019 - June 2020  \\ President}
-	%                 \ressubitem{Led the club as captain in competitions.}
-	%                 \ressubitem{Set the annual budget and ran all financial matters for both the adults' and children's club.}
-	% 	\end{ressubsec}
-
-\end{ressection}
-\fi
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\ifacademia
-\begin{ressection}{\textbf{Mentoring}}
-
-	\begin{ressubsecP}{Jack Dinsmore (graduate)}{Polarization leakage in the IXPE gas pixel detector}{2022-Present}
-	\end{ressubsecP}
-
-	\begin{ressubsecP}{Josephine Wong (graduate)}{Simultaneous polarization fitting of the Crab nebula and pulsar}{2021-Present}
-	\end{ressubsecP}
-
-\end{ressection}
-\fi
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ifacademia
-\begin{ressection}{\textbf{Media}}
-
-	\begin{ressubsecPu}{\textbf{\emph{IXPE: Science so far}}, \emph{IAUS 375: The Multimessenger Chakra of Blazar Jets}, 2022}
-	\end{ressubsecPu}
-
-	\begin{ressubsecPu}{\textbf{\emph{Episode 68}, \textbf{The NVIDIA AI Podcast}}, 2018 [\href{https://blogs.nvidia.com/ai-podcast/}{Recording}]}
-	\end{ressubsecPu}
-
-\end{ressection}
-\fi
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{ressection}{\textbf{Recent \& Upcoming Presentations}}
 	\resitem{\textbf{\textcolor{Mycolor2}{Invited}}}
 	\vspace{2pt}
@@ -365,17 +319,20 @@
 	\begin{ressubsecPu}{\textbf{\emph{The Polarization Behavior of Synchrotron Self-Compton Emission in Blazars}}, \emph{Understanding the Multiwavelength Blazar Variability - Workshop, Stanford}, 2019}
 	\end{ressubsecPu}
 
-	\begin{ressubsecPu}{\textbf{\emph{AI in Design}}, \textbf{Used Future: Symposium by Current Obsession}, Pratt Institute NY, 2018}
+	\begin{ressubsecPu}{\textbf{\emph{AI in Design}}, \emph{Used Future: Symposium by Current Obsession}, Pratt Institute NY, 2018}
 	\end{ressubsecPu}
 
-	\begin{ressubsecPu}{\textbf{\emph{Episode 68}, \textbf{The NVIDIA AI Podcast}}, 2018 [\href{https://blogs.nvidia.com/ai-podcast/}{Recording}]}
+	\ifacademia
+	\else
+	\begin{ressubsecPu}{\textbf{\emph{Episode 68}}, \emph{The NVIDIA AI Podcast}, 2018 [\href{https://blogs.nvidia.com/ai-podcast/}{Recording}]}
 	\end{ressubsecPu}
+	\fi 
 
 	\vspace{2pt}
 	\resitem{\textbf{\textcolor{Mycolor2}{Contributed}}}
 	\vspace{2pt}
 
-	\begin{ressubsecPu}{\textbf{\emph{High-Energy Polarization Properties of Relativistic Jets}}, \emph{Columbia Theoretical High-Energy Astrophysics Seminar}, Nov 2022}
+	\begin{ressubsecPu}{\textbf{\emph{High-Energy Polarization Properties of Relativistic Jets}}, \emph{Columbia THEA Seminar}, Nov 2022}
 	\end{ressubsecPu}
 
 	\begin{ressubsecPu}{\textbf{\emph{Fishy: Local Fisher Approximation via Shampoo}}, \emph{Alphabet ML Summit}, Nov 2022}
@@ -388,6 +345,19 @@
 	\end{ressubsecPu}
 
 \end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifacademia
+\begin{ressection}{\textbf{Media}}
+
+	\begin{ressubsecPu}{\textbf{\emph{NASA Blog}}, \emph{Meet IXPE Scientist Abel Lawrence Peirson}, 2022 [\href{https://blogs.nasa.gov/ixpe/2022/07/11/meet-ixpe-scientist-abel-lawrence-peirson/}{Webpage}]}
+	\end{ressubsecPu}
+
+	\begin{ressubsecPu}{\textbf{\emph{The NVIDIA AI Podcast}}, \emph{Episode 68}, 2018 [\href{https://blogs.nvidia.com/ai-podcast/}{Recording}]}
+	\end{ressubsecPu}
+
+\end{ressection}
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -432,6 +402,48 @@
 \end{ressection}
 
 \ifacademia
+\begin{ressection}{\textbf{Outreach and Service}}
+
+	\begin{ressubsec}{Wonderfest}{Bay Area, CA}{June 2019 - June 2020  \\ Science Envoy}
+	\ressubitem{Selected as one of 10 graduate students from Stanford and Berkeley to communicate science to public audiences.}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Stanford Diversity and First Generation Office}{Stanford, CA}{Oct 2018 - June 2020  \\ First Generation and Low Income Student Mentor}
+		\ressubitem{Mentoring undergraduates from underprivileged backgrounds in all matters of student life.}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Stanford Astronomical Society}{Stanford, CA}{Oct 2018 - Oct 2019  \\ Organizing Member}
+		\ressubitem{Organizing and leading stargazing events for local schools and the public.}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Stanford Science Pen Pals}{Stanford, CA}{Oct 2018 - Oct 2019  \\ Pen Pal}
+		\ressubitem{Corresponding about science with 5th graders from a low-income school in Catalonia.}
+	\end{ressubsec}
+
+	% 	\begin{ressubsec}{Stanford Judo Club}{Stanford, CA}{June 2019 - June 2020  \\ President}
+	%                 \ressubitem{Led the club as captain in competitions.}
+	%                 \ressubitem{Set the annual budget and ran all financial matters for both the adults' and children's club.}
+	% 	\end{ressubsec}
+
+\end{ressection}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifacademia
+\begin{ressection}{\textbf{Mentoring}}
+
+	\begin{ressubsecP}{Jack Dinsmore (graduate)}{Polarization leakage in the IXPE gas pixel detector}{2022-Present}
+	\end{ressubsecP}
+
+	\begin{ressubsecP}{Josephine Wong (graduate)}{Simultaneous polarization fitting of the Crab nebula and pulsar}{2021-Present}
+	\end{ressubsecP}
+
+\end{ressection}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\ifacademia
 \begin{ressection}{\textbf{Teaching}}
 	\vspace{2pt}
 	\begin{ressubsecP}{Stanford PHYS113}{\textnormal{\emph{Computational Physics} (Lecturer and Teaching Assistant)}}{Winter 2021}
@@ -467,10 +479,9 @@
 \end{ressection}
 
 %%%%%%%%%%%%%%%%%%%
-% \newpage
-%%%%%%%%%%%%%%%%%%%
 
 \newpage
+\fi % for pubs only
 
 \vspace{5pt}
 
@@ -586,7 +597,12 @@
 
 
 \ifacademia
+
+\ifpubsonly
+\else
 \newpage
+\fi
+
 \begin{ressection}{\textbf{Whitepapers \& Textbooks}}
 
 \begin{ressubsecPu}{\textbf{\emph{Neural Network Analysis of X-ray Polarimeter Data}}\\ \textbf{A.L.Peirson}, \emph{The Handbook of X-ray and Gamma Ray Astrophysics}, \href{https://arxiv.org/abs/2206.10537}{\emph{Springer Nature}}, 2022}
