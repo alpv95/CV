@@ -31,6 +31,7 @@
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{fontawesome}
+\usepackage{academicons}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -39,6 +40,7 @@
 }
 \definecolor{Mycolor2}{HTML}{820000}
 \definecolor{orcidlogocol}{HTML}{A6CE39}
+\definecolor{scholar}{HTML}{4285F4}
 % 820000
 % EFA91D
 % EF7C7C
@@ -142,7 +144,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Industry or Academia
 \newif\ifacademia
-\academiatrue
+\academiafalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -166,11 +168,15 @@
 
 \small{
 	\vspace{5pt}
-	\centerline{\faEnvelopeO \hspace{1pt} \href{mailto:alpv95@stanford.edu}{alpv95@stanford.edu} \hspace{5pt} \textcolor{linkedincol}{\faLinkedinSquare} \hspace{1pt}
-		\href{https://www.linkedin.com/in/abel-lawrence-peirson-v-b96aba94/}{abel-lawrence-peirson-v}}
+	\centerline{\faEnvelopeO \hspace{1pt} \href{mailto:alpv95@stanford.edu}{alpv95@stanford.edu} \hspace{5pt}
+	\faGlobe \hspace{1pt} \url{www.alpeirson.com}}
+% 	\textcolor{linkedincol}{\faGraduationCap} \hspace{1pt}
+% 		\href{https://www.linkedin.com/in/abel-lawrence-peirson-v-b96aba94/}{abel-lawrence-peirson-v}}
 	\vspace{1.5pt}
-	\centerline{\faGlobe \hspace{1pt} \url{www.alpeirson.com} \hspace{5pt} \faGithub \hspace{1pt} \url{www.github.com/alpv95}}
-	\vspace{1.5pt}
+	\centerline{\textcolor{scholar}{\faGraduationCap} \hspace{-1pt}
+	\href{https://scholar.google.com/citations?user=tPRMZscAAAAJ&hl=en&authuser=1&oi=sra}{abel-lawrence-peirson}
+	\hspace{5pt} \faGithub \hspace{1pt} \url{www.github.com/alpv95}}
+	\vspace{2pt}
 	\centerline{\orcidicon{0000-0000-0000-0000}\hspace{1pt} \href{https://orcid.org/0000-0001-6292-1911}{orcid.org/0000-0001-6292-1911}}
 }
 
@@ -291,7 +297,7 @@
 
 \resitem{Refereed: \textbf{10 first / second author papers}, 10 collaboration papers (see attached publication list).}
 
-\resitem{Metrics: \textbf{h-index: 7, citations: 112}. Journals: ApJ (Letters), Science, Nature, NIMA, Neurips (workshops).}
+\resitem{Metrics (10/1/22): \textbf{h-index: 7, citations: 112}. Journals: ApJ (Letters), Science, Nature, NIMA, Neurips (workshops).}
 
 \end{ressection}
 
@@ -389,6 +395,9 @@
 
 \begin{ressection}{\textbf{Open Source Software} ($\bigstar$500+)}
 
+	\resitem{\textbf{MLCommons Algorithmic Efficiency:} Benchmark and competition for neural network training. [\href{https://github.com/mlcommons/algorithmic-efficiency}{Code}][\href{https://mlcommons.org/en/groups/research-algorithms/}{Webpage}]}
+
+    \vspace{2pt}
 	\resitem{\textbf{MulensModel:}  Python package for modelling gravitational microlensing events. [\href{https://github.com/rpoleski/MulensModel}{Code}][\href{https://arxiv.org/abs/2201.01110}{Paper}][\href{https://rpoleski.github.io/MulensModel/}{Webpage}]}
 
 	\vspace{2pt}
@@ -454,12 +463,14 @@
 \end{ressection}
 \fi
 
-\begin{ressection}{\textbf{Graduate Coursework}}
+\begin{ressection}{\textbf{Selected Graduate Coursework}}
 	\vspace{-8pt}
 	\item[]
 	\begin{multicols}{2}
 		\begin{itemize}
+		\ifacademia
 			\item \textbf{\textit{APPHYS293}} (Theoretical Neuroscience)
+        \fi 
 			\item \textbf{\textit{CS379C}} (Computational Models of the Neocortex)
 			\item \textbf{\textit{CS238}} (Decision Making Under Uncertainty)
 			\item \textbf{\textit{STATS207}} (Time Series)
@@ -471,7 +482,9 @@
 			      \textbf{\textit{PHYS266}} (Statistical Methods in Physics)
 			\item
 			      \textbf{\textit{AA 214}} (Numerical Methods for Compressible Flows)
+			\ifacademia
 			\item \textbf{\textit{CS361}} (Engineering Design Optimization)
+			\fi
 			\item \textbf{\textit{EE263}} (Linear Dynamical Systems)
 		\end{itemize}
 	\end{multicols}
@@ -488,7 +501,7 @@
 \begin{ressection}{\textbf{First and Co-Authored Publications}}
 
 \begin{ressubsecPu}{\textbf{\emph{Fishy: Layerwise Fisher Approximation for Higher-Order Neural Network Optimization
-			}}\\ \textbf{A.L.Peirson}, E.Amid, M.K.Warmuth, R.Anil \href{}{\emph{Neurips HITY workshop} submitted}, 2022}
+			}}\\ \textbf{A.L.Peirson}, E.Amid, Y.Chen, V.Feinberg, M.K.Warmuth, R.Anil \href{https://openreview.net/forum?id=aHbcDL8_1p}{\emph{Neurips HITY workshop}} submitted, 2022}
 \end{ressubsecPu}
 
 \vspace{2pt}
