@@ -1,4 +1,4 @@
-\documentclass[11 pt,oneside]{article}
+\documentclass[11pt, oneside]{article}
 \usepackage{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[encapsulated]{CJK}
@@ -147,6 +147,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% No Publication list
+\newif\ifpubs
+\pubstrue
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Publication list only
 \newif\ifpubsonly
 \pubsonlyfalse
@@ -184,7 +190,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{ressection}{\textbf{Education}}
 	\vspace{2pt}
-	\begin{ressubsec}{\normalsize{Stanford University}}{\emph{Ph.D in Physics}}{2017 - Sep 2023}
+	\begin{ressubsec}{\normalsize{Stanford University}}{\emph{Ph.D in Physics}}{2017 - Mar 2023}
 		\ressubitem{Thesis: High Energy Polarization Statistics and Geometry. }
 		\ressubitem{GPA: 4.0 (in required coursework).}
 	\end{ressubsec}
@@ -201,7 +207,7 @@
 	\begin{ressubsecP}{Stanford Data Science Scholar (\$100k+)}{Stanford, USA}{2021}
 	\end{ressubsecP}
 
-	\begin{ressubsecP}{Future Investigator in NASA Earth and Space Science and Technology (\$160k+)}{Stanford, USA}{2019}
+	\begin{ressubsecP}{Future Investigator in NASA Earth and Space Science and Technology FINESST (\$160k+)}{Stanford, USA}{2019}
 	\end{ressubsecP}
 
 	\begin{ressubsecP}{Hooke and Roach prizes for most outstanding member of Christ Church across the sciences}{Oxford, UK}{2017}
@@ -294,9 +300,9 @@
 
 \begin{ressection}{\textbf{Publications}}
 
-\resitem{Refereed: \textbf{10 first / second author papers}, 10 collaboration papers (see attached publication list).}
+\resitem{Refereed: \textbf{10 first / second author papers}, 11 collaboration papers (see publication list).}
 
-\resitem{Metrics (10/1/22): \textbf{h-index: 7, citations: 112}. Journals: ApJ (Letters), Science, Nature, NIMA, Neurips (workshops).}
+\resitem{Metrics (10/1/22): \textbf{h-index: 7, citations: 114}. Journals: ApJ (Letters), Science, Nature, NIMA, Neurips (workshops).}
 
 \end{ressection}
 
@@ -391,6 +397,9 @@
 \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%
+\ifacademia
+\newpage
+\fi
 
 \begin{ressection}{\textbf{Open Source Software} ($\bigstar$500+)}
 
@@ -405,7 +414,7 @@
 	\vspace{2pt}
 	\resitem{\textbf{Dank Learning:} 'Show and Tell' image captioning for meme generation in Tensorflow. [\href{https://github.com/alpv95/MemeProject}{Code}][\href{https://arxiv.org/abs/1806.04510}{Paper}][\href{https://danklearning.com/}{Webpage}]}
 	\vspace{4pt}
-\resitem{\textbf{\emph{\textcolor{Mycolor2}{Software skills:}} Python --- C/C++ --- PyTorch --- JAX --- Tensorflow}} %add pytorch tensorflow keras etc.
+\resitem{\textbf{\emph{\textcolor{Mycolor2}{Software skills:}} Python --- C/C++ --- JAX --- PyTorch --- Tensorflow}} %add pytorch tensorflow keras etc.
 
 \end{ressection}
 
@@ -495,60 +504,51 @@
 \newpage
 \fi % for pubs only
 
+\ifpubs %no pub list
 \vspace{5pt}
 
 \begin{ressection}{\textbf{First and Co-Authored Publications}}
 
 \begin{ressubsecPu}{\textbf{\emph{Fishy: Layerwise Fisher Approximation for Higher-Order Neural Network Optimization
-			}}\\ \textbf{A.L.Peirson}, E.Amid, Y.Chen, V.Feinberg, M.K.Warmuth, R.Anil \href{https://openreview.net/forum?id=aHbcDL8_1p}{\emph{Neurips HITY workshop}} submitted, 2022}
+			}}\\ \textbf{A.L.Peirson}, E.Amid, Y.Chen, V.Feinberg, M.K.Warmuth, R.Anil \href{https://openreview.net/forum?id=cScb-RrBQC}{\emph{Neurips HITY workshop}} submitted, 2022}
 \end{ressubsecPu}
 
-\vspace{2pt}
 
 \begin{ressubsecPu}{\textbf{\emph{Testing High-Energy Emission Models for Blazars with X-ray Polarimetry
 }}\\ \textbf{A.L.Peirson}, I.Liodakis, R.W.Romani \href{https://iopscience.iop.org/article/10.3847/1538-4357/ac6a54}{\emph{ApJ}, 931, 59}, 2022}
 \end{ressubsecPu}
 
-\vspace{2pt}
 
 \ifacademia
 \else
 \begin{ressubsecPu}{\textbf{\emph{Neural Network Analysis of X-ray Polarimeter Data}}\\ \textbf{A.L.Peirson}, \emph{The Handbook of X-ray and Gamma Ray Astrophysics}, \href{https://arxiv.org/abs/2206.10537}{\emph{Springer Nature}}, 2022}
 \end{ressubsecPu}
-\vspace{2pt}
 \fi 
 
 \begin{ressubsecPu}{\textbf{\emph{A Deep Ensemble Approach to X-ray Polarimetry}}\\ \textbf{A.L.Peirson}, R.W.Romani \href{https://arxiv.org/abs/2111.03047}{\emph{Neurips ML4PS workshop}}, 2021}
 	\end{ressubsecPu}
 
-\vspace{2pt}
 
-\begin{ressubsecPu}{\textbf{\emph{New Tests of Millilensing in the Blazar PKS 1413+135}}\\ \textbf{A.L.Peirson}, I.Liodakis, A.C.S.Readhead et al. \href{https://iopscience.iop.org/article/10.3847/1538-4357/ac469e}{\emph{ApJ}, 927, 24}, 2022}
+\begin{ressubsecPu}{\textbf{\emph{New Tests of Millilensing in the Blazar PKS 1413+135}} [\href{https://github.com/rpoleski/MulensModel}{Code}]\\ \textbf{A.L.Peirson}, I.Liodakis, A.C.S.Readhead et al. \href{https://iopscience.iop.org/article/10.3847/1538-4357/ac469e}{\emph{ApJ}, 927, 24}, 2022}
 	\end{ressubsecPu}
 
-\vspace{2pt}
 
 \begin{ressubsecPu}{\textbf{\emph{Towards Optimal Signal Extraction for Imaging X-ray Polarimetry}}\\ \textbf{A.L.Peirson}, R.W.Romani. \href{https://iopscience.iop.org/article/10.3847/1538-4357/ac157d/pdf}{\emph{ApJ}, 920, 40}, 2021}
 \end{ressubsecPu}
 
-\vspace{2pt}
 
 \begin{ressubsecPu}{\textbf{\emph{Deep Ensemble Analysis for Imaging X-ray Polarimetry}}\\ \textbf{A.L.Peirson}, R.W.Romani, H.L.Marshall, J.F.Steiner, L.Baldini.  \href{https://www.sciencedirect.com/science/article/pii/S0168900220311372?via\%3Dihub}{\emph{NIMA}, 986}, 2020}
 \end{ressubsecPu}
 
-\vspace{2pt}
 
 \begin{ressubsecPu}{\textbf{\emph{The Polarization Behavior of Relativistic Synchrotron Self-Compton Jets}} [\href{https://github.com/alpv95/SSCpol}{Code}]\\ \textbf{A.L.Peirson}, R.W.Romani. \href{https://iopscience.iop.org/article/10.3847/1538-4357/ab46b1}{\emph{ApJ}, 885, 1}, 2019}
 \end{ressubsecPu}
-\vspace{2pt}
 
 \begin{ressubsecPu}{\textbf{\emph{Prospects for Detecting X-ray Polarization in Blazar Jets}}\\ I.Liodakis, \textbf{A.L.Peirson}, R.W.Romani. \href{https://iopscience.iop.org/article/10.3847/1538-4357/ab2719}{\emph{ApJ}, 880, 1}, 2019}
 \end{ressubsecPu}
-\vspace{2pt}
 
 \begin{ressubsecPu}{\textbf{\emph{The Polarization Behavior of Relativistic Synchrotron Jets}}\\ \textbf{A.L.Peirson}, R.W.Romani. \href{https://iopscience.iop.org/article/10.3847/1538-4357/aad69d/meta}{\emph{ApJ}, 864, 2}, 2018}
 \end{ressubsecPu}
-\vspace{2pt}
 
 \begin{ressubsecPu}{\textbf{\emph{Dank Learning: Generating Memes Using Deep Neural Networks}} [\href{https://github.com/alpv95/MemeProject}{Code}][\href{https://techcrunch.com/2018/06/15/dank-learning-system-autogenerates-memes/}{Techcrunch}][\href{https://thenextweb.com/artificial-intelligence/2018/06/15/stanford-researchers-taught-ai-to-make-dank-memes/}{The Next Web}]\\ \textbf{A.L.Peirson} \& E.M.Tolunay, \href{https://arxiv.org/abs/1806.04510?source=techstories.org}{1806.04510}, 2018}
 \end{ressubsecPu}
@@ -559,51 +559,57 @@
 
 \begin{ressection}{\textbf{Publications}}
 
-\begin{ressubsecPu}{\textbf{\emph{The X-ray Polarization View of Mrk~421 in an Average Flux State as Observed by IXPE}}\\ Laura Di Gesu, et al. (IXPE collaboration, incl. \textbf{A.L.Peirson}) \href{https://arxiv.org/abs/2209.07184}{\emph{ApJ Letters}}, accepted, 2022}
+\begin{ressubsecPu}{\textbf{\emph{Observations of 4U 1626-67 with the Imaging X-ray Polarimetry Explorer}}\\ H.L.Marshall, et al. (IXPE collaboration, incl. \textbf{A.L.Peirson}) \href{https://arxiv.org/abs/2210.03194}{\emph{ApJ}}, accepted, 2022}
 \end{ressubsecPu}
-\vspace{2pt}
-	
+
+\vspace{1pt}
+
+\begin{ressubsecPu}{\textbf{\emph{The X-ray Polarization View of Mrk~421 in an Average Flux State as Observed by IXPE}}\\ L.Di Gesu, et al. (IXPE collaboration, incl. \textbf{A.L.Peirson}) \href{https://arxiv.org/abs/2209.07184}{\emph{ApJ Letters}}, accepted, 2022}
+\end{ressubsecPu}
+	\vspace{1pt}
+
 \begin{ressubsecPu}{\textbf{\emph{Polarized Blazar X-rays imply Particle Acceleration in Shocks}}\\ I.Liodakis, et al. (IXPE collaboration, incl. \textbf{A.L.Peirson}) \href{https://arxiv.org/abs/2209.06227}{\emph{Nature}}, accepted, 2022}
 \end{ressubsecPu}
-\vspace{2pt}
+\vspace{1pt}
 
 \begin{ressubsecPu}{\textbf{\emph{Polarized X-rays from a Magnetar}}\\ R.Taverna, et al. (IXPE collaboration, incl. \textbf{A.L.Peirson}) \href{https://arxiv.org/abs/2205.08898}{\emph{Science}}, accepted, 2022}
 \end{ressubsecPu}
-\vspace{2pt}
+\vspace{1pt}
 
 \begin{ressubsecPu}{\textbf{\emph{X-ray Polarization Detection of Cassiopeia A with IXPE}}\\ J.Vink, et al. (IXPE collaboration, incl. \textbf{A.L.Peirson}) \href{https://arxiv.org/abs/2206.06713}{\emph{ApJ}}, accepted, 2022}
 \end{ressubsecPu}
-\vspace{2pt}
+\vspace{1pt}
 
 \begin{ressubsecPu}{\textbf{\emph{Angling for X-ray Pulsar Geometry with Polarimetry}}\\ V.Doroshenko, et al. (IXPE collaboration, incl. \textbf{A.L.Peirson}) \href{https://arxiv.org/abs/2206.07138}{\emph{Nature Astronomy}}, accepted, 2022}
 \end{ressubsecPu}
-\vspace{2pt}
+\vspace{1pt}
 
 \begin{ressubsecPu}{\textbf{\emph{Polarized X-rays Constrain The Disk-Jet Geometry in a Black Hole X-ray Binary}}\\ H.Krawczynski, et al. (IXPE collaboration, incl. \textbf{A.L.Peirson}) \href{https://arxiv.org/abs/2206.09972}{\emph{Science}}, accepted, 2022}
 \end{ressubsecPu}
-\vspace{2pt}
+\vspace{1pt}
 
 \begin{ressubsecPu}{\textbf{\emph{Simultaneous Space and Phase Resolved X-ray Polarimetry of the Crab Pulsar and Nebula}}\\ N.Bucciantini, et al. (IXPE collaboration, incl. \textbf{A.L.Peirson}) \href{https://arxiv.org/abs/2207.05573}{\emph{Nature Astronomy}}, accepted, 2022}
 \end{ressubsecPu}
-\vspace{2pt}
+\vspace{1pt}
 
 \begin{ressubsecPu}{\textbf{\emph{Limits on X-ray Polarization at the Core of Centaurus A as Observed with the Imaging X-ray Polarimetry Explorer}}\\ S.R.Ehlert, et al. (IXPE collaboration, incl. \textbf{A.L.Peirson}) \href{https://arxiv.org/abs/2207.06625}{\emph{ApJ}}, accepted, 2022}
 \end{ressubsecPu}
-\vspace{2pt}
+\vspace{1pt}
 
 \begin{ressubsecPu}{\textbf{\emph{The Relativistic Jet Orientation and Host Galaxy of the Peculiar Blazar PKS 1413+135}}\\ A.C.S.Readhead et al. (incl. \textbf{A.L.Peirson}) \href{http://arxiv.org/abs/2012.04045}{\emph{ApJ}, 907, 61}, 2020}
 \end{ressubsecPu}
-\vspace{2pt}
+\vspace{1pt}
 
 \ifacademia
 \else
 \begin{ressubsecPu}{\textbf{\emph{The X-ray Polarization Probe Mission Concept}}\\ K.Jahoda et al. (incl. \textbf{A.L.Peirson}) \emph{Decadal Survey on Astronomy and Astrophysics}, \href{https://arxiv.org/abs/1907.10190}{1907.10190}, 2020}
 \end{ressubsecPu}
-\vspace{2pt}
+\vspace{1pt}
 \fi
 
 \begin{ressubsecPu}{\textbf{\emph{Transverse Beam Phase-Space Measurement Experience at CTF3}}\\ D.Gamba, L.Martin et al. (incl. \textbf{A.L.Peirson}) \href{http://accelconf.web.cern.ch/ipac2017/doi/JACoW-IPAC2017-MOPAB115.html}{\emph{IPAC2017}}, 2017}
 \end{ressubsecPu}
+\vspace{1pt}
 
 \end{ressection}
 
@@ -619,12 +625,14 @@
 
 \begin{ressubsecPu}{\textbf{\emph{Neural Network Analysis of X-ray Polarimeter Data}}\\ \textbf{A.L.Peirson}, \emph{The Handbook of X-ray and Gamma Ray Astrophysics}, \href{https://arxiv.org/abs/2206.10537}{\emph{Springer Nature}}, 2022}
 \end{ressubsecPu}
-\vspace{2pt}
+\vspace{1pt}
+
 
 \begin{ressubsecPu}{\textbf{\emph{The X-ray Polarization Probe Mission Concept}}\\ K.Jahoda et al. (incl. \textbf{A.L.Peirson}) \emph{Decadal Survey on Astronomy and Astrophysics}, \href{https://arxiv.org/abs/1907.10190}{1907.10190}, 2020}
 \end{ressubsecPu}
 
 \end{ressection}
+\fi
 \fi
 
 \end{document}
