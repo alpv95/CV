@@ -1,0 +1,272 @@
+\documentclass[11pt, oneside]{article}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[encapsulated]{CJK}
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage{scalerel}
+\usepackage{tikz}
+\usetikzlibrary{svg.path}
+\usepackage{multicol}
+\usepackage{amssymb}
+
+
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+\definecolor{linkedincol}{HTML}{0e76a8}
+\tikzset{
+  orcidlogo/.pic={
+    \fill[orcidlogocol] svg{M256,128c0,70.7-57.3,128-128,128C57.3,256,0,198.7,0,128C0,57.3,57.3,0,128,0C198.7,0,256,57.3,256,128z};
+    \fill[white] svg{M86.3,186.2H70.9V79.1h15.4v48.4V186.2z}
+                 svg{M108.9,79.1h41.6c39.6,0,57,28.3,57,53.6c0,27.5-21.5,53.6-56.8,53.6h-41.8V79.1z M124.3,172.4h24.5c34.9,0,42.9-26.5,42.9-39.7c0-21.5-13.7-39.7-43.7-39.7h-23.7V172.4z}
+                 svg{M88.7,56.8c0,5.5-4.5,10.1-10.1,10.1c-5.6,0-10.1-4.6-10.1-10.1c0-5.6,4.5-10.1,10.1-10.1C84.2,46.7,88.7,51.3,88.7,56.8z};
+  }
+}
+
+\newcommand\orcidicon[1]{\href{https://orcid.org/#1}{\mbox{\scalerel*{
+\begin{tikzpicture}[yscale=-1,transform shape]
+\pic{orcidlogo};
+\end{tikzpicture}
+}{|}}}}
+
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+\definecolor{Mycolor2}{HTML}{820000}
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+\definecolor{scholar}{HTML}{4285F4}
+% 820000
+% EFA91D
+% EF7C7C
+%002147
+\renewcommand\labelitemii{\textcolor{Mycolor2}{$\circ$}}
+\renewcommand\labelitemiii{\textcolor{Mycolor2}{$\circ$}}
+\renewcommand\labelitemi{\textcolor{Mycolor2}{$\circ$}}
+
+
+\pagestyle{empty}
+\geometry{letterpaper,tmargin=0.6in,bmargin=0.8in,lmargin=0.4in,rmargin=0.4in,headheight=0in,headsep=0in,footskip=.3in}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands and environments
+
+% This defines how the name looks
+\newcommand{\bigname}[1]{
+	%\fontfamily{phv}
+	%\begin{center}\scshape\Huge#1\end{center}
+    {\hspace{50pt}\scshape\Huge#1}
+}
+
+% A ressection is a main section (<H1>Section</H1>)
+\newenvironment{ressection}[1]{
+	\vspace{4pt}
+	%\fontfamily{phv}
+	{\selectfont\Large\color{Mycolor2}{\textbf{#1}}}
+	\vspace{-6.5pt} \\
+	\textcolor{Mycolor2}{\rule{\textwidth}{0.7pt}}
+	\begin{itemize}
+	\vspace{3pt}
+}{
+	\end{itemize}
+}
+
+% A resitem is a simple list element in a ressection (first level)
+\newcommand{\resitem}[1]{
+	\vspace{-4pt}
+	\item[] \begin{flushleft} #1 \end{flushleft}
+    %\item[]  {#1} 
+}
+
+% A ressubitem is a simple list element in anything but a ressection (second level)
+\newcommand{\ressubitem}{
+	\vspace{-4pt}
+	%\item \begin{flushleft} #1 \end{flushleft}
+	\item
+}
+
+% A resbigitem is a complex list element for stuff like jobs and education:
+%  Arg 1: Name of company or university
+%  Arg 2: Location
+%  Arg 3: Title and/or date range
+\newcommand{\resbigitem}[3]{
+	\vspace{-5pt}
+	\item[]
+	\textbf{#1} --- #2 %\\
+	\hfill
+	\textit{#3}
+}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsec}[3]{
+	\resbigitem{#1}{#2}{#3}
+	\vspace{-2pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsecP}[3]{
+	\resbigitem{#1}{#2}{#3}
+	\vspace{2pt}
+
+}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsecPu}[1]{
+	\resitem{#1}
+	\vspace{2pt}
+
+}
+
+
+% This is a simple sublist
+\newenvironment{reslist}[1]{
+	\resitem{\textbf{#1}}
+	\vspace{-5pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Industry or Academia
+\newif\ifacademia
+\academiatrue
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% No Publication list
+\newif\ifpubs
+\pubstrue
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Publication list only
+\newif\ifpubsonly
+\pubsonlyfalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\newcommand{\zhs}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
+
+\fontfamily{ppl} \selectfont
+
+\ifpubsonly
+\else
+
+% Name with horizontal rule
+\centerline{\huge{\textbf{\textcolor{Mycolor2}{Abel Lawrence Peirson}}}}
+\vspace{5pt}
+\centerline{Kavli Institute for Particle Astrophysics and Cosmology, Stanford CA 94305}
+
+\small{
+	\vspace{5pt}
+	\centerline{\faEnvelopeO \hspace{1pt} \href{mailto:alpv95@stanford.edu}{alpv95@stanford.edu} \hspace{5pt}
+	\faGlobe \hspace{1pt} \url{www.alpeirson.com}}
+% 	\textcolor{linkedincol}{\faGraduationCap} \hspace{1pt}
+% 		\href{https://www.linkedin.com/in/abel-lawrence-peirson-v-b96aba94/}{abel-lawrence-peirson-v}}
+	\vspace{1.5pt}
+	\centerline{\textcolor{scholar}{\faGraduationCap} \hspace{-1pt}
+	\href{https://scholar.google.com/citations?user=tPRMZscAAAAJ&hl=en&authuser=1&oi=sra}{abel-lawrence-peirson}
+	\hspace{5pt} \faGithub \hspace{1pt} \url{www.github.com/alpv95}}
+	\vspace{2pt}
+	\centerline{\orcidicon{0000-0000-0000-0000}\hspace{1pt} \href{https://orcid.org/0000-0001-6292-1911}{orcid.org/0000-0001-6292-1911}}
+}
+
+\vspace{10 pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{\textbf{Education}}
+	\vspace{2pt}
+	\begin{ressubsec}{\normalsize{Stanford University}}{\emph{Ph.D in Physics}}{2017 - Mar 2023}
+		\ressubitem{Thesis: High Energy Polarization Statistics and Geometry. }
+		\ressubitem{GPA: 4.0 (in required coursework).}
+	\end{ressubsec}
+
+	\begin{ressubsec}{\normalsize{University of Oxford}}{\emph{MPhys in Physics}}{2013 - 2017}
+		\ressubitem{First Class Honours with Distinction -- top 10\% of graduating class.}
+		\ressubitem{College: Christ Church}
+	\end{ressubsec}
+\end{ressection}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{ressection}{\textbf{Honors \& Awards}}
+	\vspace{2pt}
+	\begin{ressubsecP}{Stanford Data Science Scholar (\$100k+)}{Stanford, USA}{2021}
+	\end{ressubsecP}
+
+	\begin{ressubsecP}{Future Investigator in NASA Earth and Space Science and Technology FINESST (\$160k+)}{Stanford, USA}{2019}
+	\end{ressubsecP}
+
+	\begin{ressubsecP}{Hooke and Roach prizes for most outstanding member of Christ Church across the sciences}{Oxford, UK}{2017}
+	\end{ressubsecP}
+
+	\begin{ressubsecP}{Oxford International Strategy Scholarship}{Oxford, UK}{2016}
+	\end{ressubsecP}
+
+	\begin{ressubsecP}{Christ Church Academic Scholarship}{Oxford, UK}{2014-2017}
+	\end{ressubsecP}
+
+	\begin{ressubsecP}{Gold, British Physics Olympiad}{London, UK}{2013}
+	\end{ressubsecP}
+
+\end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{ressection}{\textbf{Experience}}
+\begin{ressubsec}{Citadel GQS}{Miami / New York}{2023 - Present  \\ Quantitative Researcher}
+	\ressubitem{Alpha research: Structured Deep Learning for FICC. Long horizon and alternative data for equities.}
+\end{ressubsec}
+\vspace{2pt}
+\begin{ressubsec}{Google Brain}{Mountain View, CA}{June - Dec 2022  \\ Student Researcher}
+	\ressubitem{Working with Rohan Anil and Ehsan Amid on practical optimization for deep learning.}
+\end{ressubsec}
+\vspace{2pt}
+	\begin{ressubsec}{G-Research}{London, UK}{June - Sep 2021  \\ Quantitative Researcher}
+		\ressubitem{Quantitative research intern working on forecasting capital markets.}
+	\end{ressubsec}
+	\vspace{2pt}
+	\begin{ressubsec}{Peirson \& Freedman}{Stanford, CA}{Aug 2018 - Present  \\ Co-founder}
+\ressubitem{Conceived and designed iOS app \textbf{\emph{Dank Learning}} that uses RNNs to generate memes. [\href{https://danklearning.com/}{Webpage}]}
+	\end{ressubsec}
+
+\end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{ressection}{\textbf{Open Source Software} ($\bigstar$500+)}
+
+	\resitem{\textbf{MLCommons Algorithmic Efficiency:} Benchmark and competition for neural network training. [\href{https://github.com/mlcommons/algorithmic-efficiency}{Code}][\href{https://mlcommons.org/en/groups/research-algorithms/}{Webpage}]}
+
+    \vspace{2pt}
+	\resitem{\textbf{ixpeobssim:} Simulation and analysis framework for the Imaging X-ray Polarimetry Explorer. [\href{https://github.com/lucabaldini/ixpeobssim}{Code}][\href{https://ixpeobssim.readthedocs.io/en/latest/index.html}{Webpage}]}
+
+    \vspace{2pt}
+	\resitem{\textbf{MulensModel:}  Python package for modelling gravitational microlensing events. [\href{https://github.com/rpoleski/MulensModel}{Code}][\href{https://arxiv.org/abs/2201.01110}{Paper}][\href{https://rpoleski.github.io/MulensModel/}{Webpage}]}
+
+	\vspace{2pt}
+	\resitem{\textbf{SSCpol:}  Polarized relativistic jet simulation in C with Python wrapper. [\href{https://github.com/alpv95/SSCpol}{Code}][\href{https://ui.adsabs.harvard.edu/abs/2019ApJ...885...76P/abstract}{Paper}]}
+
+	\vspace{2pt}
+	\resitem{\textbf{Dank Learning:} 'Show and Tell' image captioning for meme generation in Tensorflow. [\href{https://github.com/alpv95/MemeProject}{Code}][\href{https://arxiv.org/abs/1806.04510}{Paper}][\href{https://danklearning.com/}{Webpage}]}
+	\vspace{4pt}
+\resitem{\textbf{Python --- C/C++ --- JAX --- PyTorch --- Tensorflow}}
+
+\end{ressection}
+
+\fi % for pubs only
+
+\end{document}
