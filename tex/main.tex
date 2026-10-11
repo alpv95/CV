@@ -140,31 +140,11 @@
 	\end{itemize}
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Industry or Academia
-\newif\ifacademia
-\academiatrue
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% No Publication list
-\newif\ifpubs
-\pubstrue
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Publication list only
-\newif\ifpubsonly
-\pubsonlyfalse
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{document}
 \newcommand{\zhs}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
 
 \fontfamily{ppl} \selectfont
 
-\ifpubsonly
-\else
 
 % Name with horizontal rule
 \centerline{\huge{\textbf{\textcolor{Mycolor2}{Abel Lawrence Peirson}}}}
@@ -261,8 +241,8 @@
 
 \vspace{2pt}
 \begin{ressubsec}{Wu Tsai Neurosciences Institute}{Stanford University, CA}{Mar 2018 - Jun 2018 \\ with \textbf{Prof. Shaul Druckmann}}
-\ressubitem{Developed biologically inspired recurrent neural network to reproduce 2D path integration in the Drosophila fly brain.}
-		%  Developing a ring attractor dynamical system neural network to reproduce 2D path integration and pointing vector persistence in the Drosophila fly brain.} \ressubitem{Results understood using topological data analysis.}
+\ressubitem{Biologically inspired recurrent neural network to reproduce 2D path integration in the Drosophila brain.}
+		%  Developing a ring attractor dynamical system neural network to reproduce 2D path integration and pointing vector persistence in the Drosophila brain.} \ressubitem{Results understood using topological data analysis.}
 	\end{ressubsec}
 
 \vspace{2pt}
@@ -321,12 +301,6 @@
 	\begin{ressubsecPu}{\textbf{\emph{AI in Design}}, \emph{Used Future: Symposium by Current Obsession}, Pratt Institute NY, 2018}
 	\end{ressubsecPu}
 
-	\ifacademia
-	\else
-	\begin{ressubsecPu}{\textbf{\emph{Episode 68}}, \emph{The NVIDIA AI Podcast}, 2018 [\href{https://podcasts.apple.com/us/podcast/this-astrophysics-grad-student-doesnt-always-make-memes/id1186480811?i=1000419233302}{Recording}]}
-	\end{ressubsecPu}
-	\fi 
-
 	\vspace{2pt}
 	\resitem{\textbf{\textcolor{Mycolor2}{--- Contributed ---}}}
 	\vspace{2pt}
@@ -348,7 +322,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%
 
-\ifacademia
 \begin{ressection}{\textbf{Telescope \& Computing Allocations}}
 	\vspace{2pt}
 	\begin{ressubsecP}{ALMA}{\textnormal{\emph{High-frequency radio observations of IXPE targets}, 7-14 day (Co-I)}}{2021}
@@ -370,7 +343,6 @@
 	\end{ressubsecP}
 
 \end{ressection}
-\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{ressection}{\textbf{Open Source} ($\bigstar$1000+)}
@@ -394,7 +366,8 @@
 
 \end{ressection}
 
-\ifacademia
+\newpage
+
 \begin{ressection}{\textbf{Outreach and Service}}
 
 	\begin{ressubsec}{Wonderfest}{Bay Area, CA}{June 2019 - June 2020  \\ Science Envoy}
@@ -419,11 +392,9 @@
 	% 	\end{ressubsec}
 
 \end{ressection}
-\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ifacademia
 \begin{ressection}{\textbf{Mentoring}}
 
 	\begin{ressubsecP}{Jack Dinsmore (graduate)}{Polarization leakage in the IXPE gas pixel detector}{2022 - Mar 2023}
@@ -433,10 +404,8 @@
 	\end{ressubsecP}
 
 \end{ressection}
-\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%
-\ifacademia
 \begin{ressection}{\textbf{Teaching}}
 	\vspace{2pt}
 	\begin{ressubsecP}{Stanford PHYS113}{\textnormal{\emph{Computational Physics} (Lecturer and Teaching Assistant)}}{Winter 2021}
@@ -445,16 +414,13 @@
 	\begin{ressubsecP}{Stanford PHYS100}{\textnormal{\emph{Introduction to Observational Astrophysics} (Teaching Assistant)}}{Spring 2019}
 	\end{ressubsecP}
 \end{ressection}
-\fi
 
 \begin{ressection}{\textbf{Selected Graduate Coursework}}
 	\vspace{-8pt}
 	\item[]
 	\begin{multicols}{2}
 		\begin{itemize}
-		\ifacademia
 			\item \textbf{\textit{APPHYS293}} (Theoretical Neuroscience)
-        \fi 
 			\item \textbf{\textit{CS379C}} (Computational Models of the Neocortex)
 			\item \textbf{\textit{CS238}} (Decision Making Under Uncertainty)
 			\item \textbf{\textit{STATS207}} (Time Series)
@@ -466,9 +432,7 @@
 			      \textbf{\textit{PHYS266}} (Statistical Methods in Physics)
 			\item
 			      \textbf{\textit{AA 214}} (Numerical Methods for Compressible Flows)
-			\ifacademia
 			\item \textbf{\textit{CS361}} (Engineering Design Optimization)
-			\fi
 			\item \textbf{\textit{EE263}} (Linear Dynamical Systems)
 		\end{itemize}
 	\end{multicols}
@@ -478,9 +442,7 @@
 %%%%%%%%%%%%%%%%%%%
 
 \newpage
-\fi % for pubs only
 
-\ifpubs %no pub list
 \vspace{5pt}
 
 \begin{ressection}{\textbf{Selected Publications} (h-index 44)}
@@ -542,7 +504,6 @@
 \end{ressubsecPu}
 
 \end{ressection}
-\fi
 
 \end{document}
 

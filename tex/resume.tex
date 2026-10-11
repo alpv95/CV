@@ -140,31 +140,11 @@
 	\end{itemize}
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Industry or Academia
-\newif\ifacademia
-\academiatrue
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% No Publication list
-\newif\ifpubs
-\pubstrue
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Publication list only
-\newif\ifpubsonly
-\pubsonlyfalse
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{document}
 \newcommand{\zhs}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
 
 \fontfamily{ppl} \selectfont
 
-\ifpubsonly
-\else
 
 % Name with horizontal rule
 \centerline{\huge{\textbf{\textcolor{Mycolor2}{Abel Lawrence Peirson}}}}
@@ -268,11 +248,9 @@
 
 \end{ressection}
 
-\fi % for pubs only
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ifpubs
 \newpage
 
 \begin{ressection}{\textbf{Selected Publications} (h-index 44)}
@@ -334,6 +312,5 @@
 \end{ressubsecPu}
 
 \end{ressection}
-\fi
 
 \end{document}
